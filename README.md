@@ -1,4 +1,4 @@
-## Computabilidad y Complejidad
+## Computabilidad y Complejidad / Teoría de la Computación
 ## Actividades
 ### Profesor Pablo Pandolfo
 ### UNAHUR - 2do Cuatrimestre 2026
