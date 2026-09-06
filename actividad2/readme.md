@@ -6,6 +6,7 @@
 
 ![MT duplica unos](./archivos/MTDuplicaUnos.png)
 
+### Definición formal
 ```
 MT  = < Γ = {0,1,▯},
         Σ = {1},
@@ -24,6 +25,7 @@ MT  = < Γ = {0,1,▯},
             }
       >
 ```
+### Matriz de transiciones
 
 | δ  | 1   | 0   | ▯   |
 |:--:|:---:|:---:|:---:|
@@ -33,6 +35,7 @@ MT  = < Γ = {0,1,▯},
 | *s | -   | -   | -   |
 
 <br>
+
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTduplicaUnos.jff)
 
 <br>
