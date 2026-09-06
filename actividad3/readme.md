@@ -1,6 +1,56 @@
 ## Actividad 3
 
-### Diferencia entre MTAccept y MTCalc
+## MT para un lenguaje regular (LR)
+
+<p>L = { w1**ab**w2 / w1, w2 ∈ {a,b,c}*}></p>
+Todas las palabras sobre el alfabeto {a,b,c} que contengan la subcadena "ab"
+
+### JFLAP
+
+![MT que acepta palabras con ab](./archivos/MTAceptaPalabrasConab.png)
+
+### Definición formal
+```
+MT  = < Γ = {a,b,c,▯},
+        Σ = {a,b,c},
+        b = {▯},
+        Q = {q0,q1,qa,qr},
+        q0 = q0,
+        F = {qa},
+        δ = { δ(q0,a)=(q1,a,R),
+              δ(q0,b)=(q0,b,R),
+              δ(q0,c)=(q0,c,R),
+              δ(q0,▯)=(qr,▯,S),
+              δ(q1,a)=(q1,a,R),
+              δ(q1,b)=(qa,b,S),
+              δ(q1,c)=(q0,c,R),
+              δ(q1,▯)=(qr,▯,S),
+            }
+      >
+```
+### Matriz de transiciones
+
+| δ  | a   | b   | c   | ▯   |
+|:--:|:---:|:---:|:---:|:---:|
+| >q0 | q1aR | q0bR | q0cR |qr▯S |
+| q1 | q1aR | qabS | q0cR |qr▯S |
+| qr  | -   | -   | -   | -   |
+| *qa | -   | -   | -   | -   |
+
+### Prueba de pertenencia al lenguaje
+
+![MT que acepta palabras con ab](./archivos/EjPalabrasAceptadasORechazadas.png)
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTaceptawconab.jff)
+
+<br>
+
+## MT para un lenguaje independiente del contexto (LIC)
+
+
+
+## Diferencia entre MTAccept y MTCalc
 
 | Característica | MTAccept | MTCalc |
 |---|---|---|
