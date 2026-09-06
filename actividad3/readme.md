@@ -2,8 +2,8 @@
 
 ## MT para un lenguaje regular (LR)
 
-<p>L = { w1**ab**w2 / w1, w2 ∈ {a,b,c}*}></p>
-Todas las palabras sobre el alfabeto {a,b,c} que contengan la subcadena "ab"
+L = { w1**ab**w2 / w1, w2 ∈ {a,b,c}*}>
+<p>Todas las palabras sobre el alfabeto {a,b,c} que contengan la subcadena "ab"</p>
 
 ### JFLAP
 
