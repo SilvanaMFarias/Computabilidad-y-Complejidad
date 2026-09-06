@@ -6,6 +6,33 @@
 
 ![MT duplica unos](./archivos/MTDuplicaUnos.png)
 
+```
+MT  = < Γ = {0,1,▯},
+        Σ = {1},
+        b = {▯},
+        Q = {p,q,r,s},
+        q0 = p,
+        F = {s},
+        δ = { δ(p,1)=(q,0,R),
+              δ(p,0)=(p,0,L),
+              δ(p,▯)=(r,▯,R),
+              δ(q,1)=(q,1,R),
+              δ(q,0)=(q,0,R),
+              δ(q,▯)=(p,0,L),
+              δ(r,0)=(r,1,R),
+              δ(r,▯)=(s,▯,S),
+            }
+      >
+```
+
+| δ  | 1   | 0   | ▯   |
+|:--:|:---:|:---:|:---:|
+| >p | q0R | p0L | r▯R |
+| q  | q1R | q0R | p0L |
+| r  | -   | r1R | s▯S |
+| *s | -   | -   | -   |
+
+<br>
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTduplicaUnos.jff)
 
 <br>
