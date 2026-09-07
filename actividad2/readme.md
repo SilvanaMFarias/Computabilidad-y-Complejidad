@@ -40,11 +40,15 @@ MT  = < Γ = {0,1,▯},
 
 Entrada: 1
 
-![1](./archivos/1.png)
+<img src="./archivos/1.png" alt="Input 1" width="400">
+
+<br>
 
 Entrada: 11
 
-![11](./archivos/11.png)
+<img src="./archivos/11.png" alt="Input 11" width="400">
+
+<br>
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTduplicaUnos.jff)
 
