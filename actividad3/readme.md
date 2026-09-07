@@ -100,12 +100,12 @@ MT  = < Γ = {a,b,X,A,B,▯},
 
 ### Prueba de pertenencia al lenguaje
 
-![MT que acepta palabras con ab](./archivos/EjPalabrasAceptadasORechazadasLIC.png)
+![MT que acepta palabras con a a las m+1 b a la m](./archivos/EjPalabrasAceptadasORechazadasLIC.png)
 <br>
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTLIC.jff)
 
-🔗 (http://turingmachinesimulator.com/shared/phbrtvossw)
+🔗 (http://turingmachinesimulator.com/shared/ynuulaxwlr)
 
 <br>
 
