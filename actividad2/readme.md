@@ -36,6 +36,16 @@ MT  = < Γ = {0,1,▯},
 
 <br>
 
+### Ejemplos de funcionamiento
+
+Entrada: 1
+
+![1](./archivos/1.png)
+
+Entrada: 11
+
+![11](./archivos/11.png)
+
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTduplicaUnos.jff)
 
 <br>
