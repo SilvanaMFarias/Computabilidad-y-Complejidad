@@ -44,6 +44,8 @@ MT  = < Γ = {a,b,c,▯},
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTaceptawconab.jff)
 
+🔗 (http://turingmachinesimulator.com/shared/eyribxttua)
+
 <br>
 
 ## MT para un lenguaje independiente del contexto (LIC)
@@ -102,6 +104,8 @@ MT  = < Γ = {a,b,X,A,B,▯},
 <br>
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTLIC.jff)
+
+🔗 (http://turingmachinesimulator.com/shared/phbrtvossw)
 
 <br>
 
