@@ -48,7 +48,64 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTaceptawconab.jff)
 
 ## MT para un lenguaje independiente del contexto (LIC)
 
+L = { a<sup>m+1</sup>b<sup>m</sup> | m ≥ 1 }
 
+### Producciones
+
+S -> aSb<br>
+S -> aab
+
+### JFLAP
+
+![MT que acepta palabras <sup>m+1</sup>b<sup>m</sup> | m ≥ 1 ](./archivos/MTLIC.png )
+
+### Definición formal
+```
+MT  = < Γ = {a,b,X,A,B,▯},
+        Σ = {a,b},
+        b = {▯},
+        Q = {q0,q1,q2,q3,q4,qa},
+        q0 = q0,
+        F = {qa},
+        δ = { δ(q0,a)=(q1,X,R),
+              δ(q1,a)=(q2,A,R),
+              δ(q1,A)=(q1,A,R),
+              δ(q1,B)=(q4,B,R),
+              δ(q2,a)=(q2,a,R),
+              δ(q2,b)=(q3,B,L),
+              δ(q2,A)=(q2,A,R),
+              δ(q2,B)=(q2,B,R),
+              δ(q3,a)=(q3,a,L),
+              δ(q3,b)=(q3,b,L),
+              δ(q3,X)=(q1,X,R),
+              δ(q3,A)=(q3,A,L),
+              δ(q3,B)=(q3,B,L),
+              δ(q4,B)=(q4,B,R),
+              δ(q4,▯)=(qa,▯,S)
+            }
+      >
+```
+### Matriz de transiciones
+
+| δ  | a   | b   | X   | A   | B   |▯   |
+|:--:|:---:|:---:|:---:|:---:|:---:|:---:|
+| >q0|q1XR | -   | -   | -   | -   | -   |
+| q1 |q2AR | -   | -   |q1AR |q4BR | -   |
+| q2 |q2aR | q3BL| -   |q2AR |q2BR | -   |
+| q3 |q3aL | q3bL|q1XR |q3AL |q3BL | -   |
+| q4 |-    | -   | -   | -   |q4BR |qa▯S|
+|*qa |-    | -   | -   | -   | -   | -   |
+
+### Prueba de pertenencia al lenguaje
+
+![MT que acepta palabras con ab](./archivos/EjPalabrasAceptadasORechazadasLIC.png)
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTLIC.jff)
+
+<br>
+
+<hr>
 
 ## Diferencia entre MTAccept y MTCalc
 
