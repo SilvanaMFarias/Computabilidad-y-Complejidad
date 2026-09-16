@@ -41,13 +41,23 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC1.jff)
 
 <br>
 
-Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2Mejora.jff.jff)
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2Mejora.jff)
 
 <br>
 
 <p>3 - Se dispone de una cinta en la que hay un número m de 1s seguido de un número n ≥ m de Aes. Se desea definir una MT que cambie las primeras m Aes por Bes. Se supone que la cabeza de la cinta inicialmente está en el 1 más a la izquierda </p>
 
 <p>4 - Comprobar si dos palabras formadas con símbolos de Σ = {0, 1, 2} son iguales. Las dos palabras están separadas por el símbolo #</p>
+
+<img src="./archivos/4.png" alt="MT4" width="900">
+<img src="./archivos/4Resultado.png" alt="MT4" width="300">
+
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4.jff)
+
+<br>
+
 
 <p>5 - Sumatoria de (n + i) , con 1 ≤ i ≤ n, con n codificado en unario</p>
 
