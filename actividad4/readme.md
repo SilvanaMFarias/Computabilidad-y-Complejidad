@@ -4,7 +4,7 @@
 
 <p>1 - Calcular la imagen especular de una cadena definida sobre {a,b}, es decir f(w)=reverso(w). Ejemplos: f(aabb)=bbaa y f(aba)=aba *</p>
 
-![MTC 1](./archivos/1.png)
+<img src="./archivos/1.png" alt="MT1" width="800">
 
 <br>
 
@@ -25,11 +25,23 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC1.jff)
 
 <p>2 - Duplicar una cadena de aes y bes en la cinta. Ejemplo: si la MT comienza con abbaa□ en su cinta, luego de procesar su programa debe terminar con abbaa□abbaa</p>
 
-![MTC 2](./archivos/2.png)
-<br>
+![MTC 2](./archivos/2mejora.png)
+
 <br>
 
-Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2.jff)
+<b>*Ejemplo*</b>
+
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/2Inicio.png" alt="Entrada 2" width="350">
+
+<br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/2Resultado.png" alt="Salida 2" width="350">
+
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2Mejora.jff.jff)
 
 <br>
 
