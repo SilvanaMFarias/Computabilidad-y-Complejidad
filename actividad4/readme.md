@@ -25,7 +25,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC1.jff)
 
 <p>2 - Duplicar una cadena de aes y bes en la cinta. Ejemplo: si la MT comienza con abbaa□ en su cinta, luego de procesar su programa debe terminar con abbaa□abbaa</p>
 
-<img src="./archivos/2mejora.png" alt="MT3" width="700">
+<img src="./archivos/2mejora.png" alt="MT3" width="850">
 
 <br>
 
