@@ -70,7 +70,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC3.jff)
 
 <p>4 - Comprobar si dos palabras formadas con símbolos de Σ = {0, 1, 2} son iguales. Las dos palabras están separadas por el símbolo #</p>
 
-<img src="./archivos/4.png" alt="MT4" width="900">
+<img src="./archivos/4.png" alt="MT4" width="850">
 <img src="./archivos/4Resultado.png" alt="MT4" width="300">
 
 <br>
