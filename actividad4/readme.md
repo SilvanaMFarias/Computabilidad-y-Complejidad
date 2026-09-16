@@ -47,6 +47,27 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2Mejora.jff)
 
 <p>3 - Se dispone de una cinta en la que hay un número m de 1s seguido de un número n ≥ m de Aes. Se desea definir una MT que cambie las primeras m Aes por Bes. Se supone que la cabeza de la cinta inicialmente está en el 1 más a la izquierda </p>
 
+<img src="./archivos/3.png" alt="MT3" width="400">
+
+<br>
+
+<b>*Ejemplo*</b>
+
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/3Inicio.png" alt="Entrada 3" width="350">
+
+<br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/3Resultado.png" alt="Salida 3" width="350">
+
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC3.jff)
+
+<br>
+
+
 <p>4 - Comprobar si dos palabras formadas con símbolos de Σ = {0, 1, 2} son iguales. Las dos palabras están separadas por el símbolo #</p>
 
 <img src="./archivos/4.png" alt="MT4" width="900">
