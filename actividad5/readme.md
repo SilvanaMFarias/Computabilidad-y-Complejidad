@@ -350,8 +350,16 @@ def main():
 
         posicion, estado = ejecutar_transicion(cinta,posicion,transicion)
 
+        if posicion >= len(cinta):
+          print("El cabezal llegó al separador $. La máquina se detiene.")
+          break
+
+        if posicion < 0:
+          print("El cabezal salió del límite izquierdo de la cadena. La máquina se detiene.")
+          break
 
 main()
+
 ```
 
 Link a Google Colab
