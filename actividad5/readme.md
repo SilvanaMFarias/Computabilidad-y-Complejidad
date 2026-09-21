@@ -360,7 +360,7 @@ def main():
           break
 
 main()
-git
+
 ```
 
 Link a Google Colab
@@ -374,21 +374,24 @@ Link a Google Colab
 
 * Documentar los resultados
 
+*Preguntas:*
+*Cómo distingo en este caso, si acepta o no la palabra?*
+*Conceptualmente, la MTU también está sobre una cinta infinita? Tengo que controlar a izq que no haya un blanco, o que no haya más símbolos que leer hacia la derecha (si ya llegué a $)?*
 <br>
 
-*Caso 1*
+*Caso 1 - Acepta la palabra*
 
 <img src="./archivos/caso1.png" alt="Caso 1" width="500">
 
 <br>
 
-*Caso 2*
+*Caso 2 - No acepta la palabra*
 
 <img src="./archivos/caso2.png" alt="Caso 2" width="500">
 
 <br>
 
-*Caso 3*
+*Caso 3 - No acepta la palabra*
 
 <img src="./archivos/caso2.png" alt="Caso 3" width="500">
 
