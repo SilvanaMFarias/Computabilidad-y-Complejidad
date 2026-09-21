@@ -132,6 +132,7 @@ Por lo tanto, la codificación de la cinta de MTU es la siguiente:
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTab.jff)
 
+<br>
 
 #### Definición formal
 ```
@@ -203,10 +204,10 @@ MT  = < Γ = {a,b,▯},
 
 *Simulación paso a paso*
 
-*010$001#0000100#0010010#0100100#0111010
-1*10$000#0000100#0010010#0100100#0111010
-10*0$011#0000100#0010010#0100100#0111010
-101*$100#0000100#0010010#0100100#0111010
+<div>*010$001#0000100#0010010#0100100#0111010</div>
+<div>1*10$000#0000100#0010010#0100100#0111010</div>
+<div>10*0$011#0000100#0010010#0100100#0111010</div>
+<div>101*$100#0000100#0010010#0100100#0111010</div>
 
 <br>
 
@@ -365,7 +366,7 @@ git
 Link a Google Colab
 🔗 (https://colab.research.google.com/drive/1dyg4cI9e_Lc4GbeGnbhxOrYqnuc8MIMb?usp=sharing)
 
-
+<br>
 
 ### 3 - Pruebas de funcionamiento
 
