@@ -40,8 +40,29 @@ Por lo tanto, la MTU obtiene en cada caso el mismo resultado que obtendría M al
 |qf|	-|	-|
 
 <p>a) Explicar que hace M</p>
+
+<p  align="justify">
+La máquina M invierte el primer símbolo de la cadena de entrada: si lee 0, lo reemplaza por 1, y si lee 1, lo reemplaza por 0. Luego avanza hacia la derecha y lee el segundo símbolo sin alterar su valor, pasando finalmente al estado de aceptación qf.
+Para que la máquina alcance el estado qf, la cadena debe contener como mínimo dos símbolos. Si la entrada tiene solamente un símbolo (0 o 1), luego de procesarlo la máquina queda en q1 leyendo un blanco. Como no existe una transición definida para ese caso, se detiene sin alcanzar el estado final.
+</p>
+
+<img src="./archivos/MT3.png" alt="MT Punto 3" width="250">
+
+<br>
 <p>b) Explicar qué información debería recibir una MTU para poder simular M</p>
-<p>c) Codificar la cintar de MTU sabiendo que configuración de la cinta de MT M es 1 q0 0 1 1</p>
+
+<div align="justify">
+Para poder simular a M, la MTU debe recibir una codificación de la máquina M y la cadena de entrada w que se desea procesar.
+La codificación de M, debe contener la información necesaria para describir su funcionamiento: el alfabeto de entrada y de cinta, los estados y la función de transición. Estos elementos se representan mediante una codificación que la MTU pueda interpretar.
+Por lo tanto, la entrada de la MTU puede representarse como: </div>
+<div  align="center">(M,w)</div>
+<div  align="justify">
+donde M corresponde a la descripción codificada de la máquina M y w es la cadena sobre la cual se realizará la simulación. A partir de esta información, la MTU puede reproducir paso a paso el comportamiento de M.
+</div>
+<br>
+
+<p>c) Codificar la cinta de MTU sabiendo que configuración de la cinta de MT M es 1 q0 0 1 1</p>
+
 <br>
 <hr>
 
