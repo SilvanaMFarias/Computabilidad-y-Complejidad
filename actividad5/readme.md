@@ -63,7 +63,52 @@ donde ⟨M⟩ corresponde a la descripción codificada de la máquina M y w es l
 
 <p>c) Codificar la cinta de MTU sabiendo que configuración de la cinta de MT M es 1 q0 0 1 1</p>
 
+Para codificar la cinta, debemos realizar la codificación de la MT.
+A partir de la información de la MT, realizamos la codificación de los símbolos, estados y movimientos.
+
+*MT original:*
+|Q	|0|	1|
+|:---:|:---:|:---:|
+|q0	|(q1,1,R)	|(q1,0,R)|
+|q1	|(qf,0,R)	|(qf,1,R)|
+|qf|	-|	-|
+
 <br>
+
+*Codificación de los símbolos:*
+
+<p>0 = 0, 1 = 1</p>
+
+*Codificación de los estados:*
+
+<p>q0 = 00, q1 = 01, qf = 10</p>
+
+*Codificación de los movimientos:*
+
+<p>L = 1, R = 0</p>
+
+*Codificación de M:*
+
+|Q	|0|	1|
+|:---:|:---:|:---:|
+|00	|(01,1,0)	|(01,0,0)|
+|01	|(10,0,0)	|(10,1,0)|
+|10|	-|	-|
+
+*⟨M⟩*
+
+#0000110#0010100#0101000#0111010
+
+*Codificación de la cinta de MTU sabiendo que configuración de la cinta de MT M es 1 q0 0 1 1*
+
+En este caso, la máquina se encuentra en el estado q0, y el símbolo sobre el que se encuentra la cabeza es el 0. La palabra de la cinta que precede a la celda sobre la que se encuentra la cabeza de entrada/salida es 1, y la que se encuentra a continuación de la misma es 11.
+
+Por lo tanto, la configuración de la cinta de MTU es la siguiente:
+
+1*11$000#0000110#0010100#0101000#0111010
+
+<br>
+
 <hr>
 
 
