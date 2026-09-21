@@ -122,12 +122,95 @@ Por lo tanto, la codificación de la cinta de MTU es la siguiente:
 <hr>
 
 
-#### 1 - Codificación de una máquina simple
+### 1 - Codificación de una máquina simple
 
-* Definir una máquina *M* que ...
-* Codificar sus estados, símbolos y transiciones en forma numérica
+**Definir una máquina *M*... que obre el alfabeto {a,b}, acepte palabras que que contengan la subcadena "ab"**
 
-#### 2 - Simulación básica
+#### JFLAP
+
+<img src="./archivos/MTab.png" alt="MT ab" width="800">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTab.jff)
+
+
+#### Definición formal
+```
+MT  = < Γ = {a,b,▯},
+        Σ = {a,b},
+        b = {▯},
+        Q = {q0,q1,q2},
+        q0 = q0,
+        F = {q2},
+        δ = { 
+              δ(q0,a)=(q1,a,R),
+              δ(q0,b)=(q0,b,R),
+              δ(q1,a)=(q1,a,R),
+              δ(q1,b)=(q2,b,R)
+            }
+      >
+```
+#### Matriz de transiciones
+
+| δ  | a   | b   |
+|:--:|:---:|:---:|
+| >q0 | q1,a,R | q0,b,R |
+| q1 | q1,a,R | q2,b,R | 
+| *q2  | -   | -   | 
+
+<br>
+
+**Codificar sus estados, símbolos y transiciones en forma numérica**
+
+<br>
+
+*Codificación de los estados:*
+
+<p>q0 = 00, q1 = 01, q2 = 10</p>
+
+*Codificación de los símbolos:*
+
+<p>a = 0, b = 1</p>
+
+<br>
+
+*Codificación de los movimientos:*
+
+<p>L = 1, R = 0</p>
+
+<br>
+
+*Codificación de M:*
+
+|Q	|0|	1|
+|:---:|:---:|:---:|
+|00	|(01,0,0)	|(00,1,0)|
+|01	|(01,0,0)	|(10,1,0)|
+|10|	-|	-|
+
+<br>
+
+*⟨M⟩*
+
+#0000100#0010010#0100100#0111010
+
+<br>
+
+*Ejemplo codificación MTU recibiendo "baba" como cadena*
+
+*010$001#0000100#0010010#0100100#0111010
+
+<br>
+
+*Simulación paso a paso*
+
+*010$001#0000100#0010010#0100100#0111010
+1*10$000#0000100#0010010#0100100#0111010
+10*0$011#0000100#0010010#0100100#0111010
+101*$100#0000100#0010010#0100100#0111010
+
+<br>
+
+### 2 - Simulación básica
 
 * Implementar en Python un programa que reciba
   
@@ -150,12 +233,160 @@ Por lo tanto, la codificación de la cinta de MTU es la siguiente:
     <mi>w</mi>
   </math>
 
-#### 3 - Pruebas de funcionamiento
+  <br>
+
+Hecha especialmente para esta MT. Falta ajustar para cualquier MT.
+```
+def codificar_cadena(cadena):
+    # Convierte la cadena de entrada a la codificación utilizada por la MTU.
+    # a = 0
+    # b = 1
+
+    cadena_codificada = ""
+
+    for simbolo in cadena:
+        if simbolo == "a":
+            cadena_codificada += "0"
+        elif simbolo == "b":
+            cadena_codificada += "1"
+
+    return cadena_codificada
+
+
+def cargar_transiciones(codificacion):
+    # Separa la codificación de M en sus distintas transiciones.
+
+    return codificacion.split("#")
+
+
+def buscar_transicion(transiciones, estado, simbolo):
+    # Busca una transición que coincida con el estado actual
+    # y el símbolo leído. Si no la encuentra, devuelve None
+
+    trans_a_buscar = estado + simbolo
+
+    for transicion in transiciones:
+        if transicion.startswith(trans_a_buscar):
+            return transicion
+
+    return None
+
+def decodificar_transicion(transicion):
+    #Divide una transición codificada en:
+    #estado actual, símbolo leído, estado siguiente,
+    #símbolo escrito y movimiento.
+
+    estado_actual = transicion[0:2] # Posición 0 y 1
+    simbolo_leido = transicion[2] # Posición 2
+    estado_siguiente = transicion[3:5] # Posición 3 y 5
+    simbolo_escrito = transicion[5] # Posición 5
+    movimiento = transicion[6] # Posición 6
+
+    return estado_actual, simbolo_leido, estado_siguiente, simbolo_escrito, movimiento
+
+
+def mostrar_configuracion(cinta, posicion, estado,codificacion_m ):
+    # Muestra el estado actual de la simulación.
+
+    cinta_mostrar = cinta.copy()
+    caracter_leido = cinta[posicion]
+    cinta_mostrar[posicion] = "*"
+    print("".join(cinta_mostrar)+"$"+ estado + caracter_leido + codificacion_m, "\t")
+
+
+def ejecutar_transicion(cinta, posicion, transicion):
+    # Escribe el nuevo símbolo, mueve el cabezal y
+    # devuelve el nuevo estado y posición.
+
+    _, _, estado_siguiente, simbolo_escrito, movimiento = decodificar_transicion(transicion)
+
+    cinta[posicion] = simbolo_escrito
+
+    if movimiento == "0":       # Derecha
+        posicion += 1
+    elif movimiento == "1":     # Izquierda
+        posicion -= 1
+
+    return posicion, estado_siguiente
+
+
+
+def main():
+
+    # Codificacion de la maquina: #0000100#0010010#0100100#0111010
+    codificacion_m = input("Ingrese la codificacion de la maquina: ")
+    # cadena: baba
+    cadena = input("Ingrese la cadena: ")
+
+    # Codificar la cadena
+    cinta = list(codificar_cadena(cadena))
+
+    # Obtener las transiciones de M
+    transiciones = cargar_transiciones(codificacion_m)
+
+    # Configuración inicial
+    estado = "00"
+    posicion = 0
+
+    print("\n--- Simulación ---\n")
+
+    print(f"Cadena: {cadena}")
+    print(f"Codificacion de la maquina: {codificacion_m}\n\n")
+
+    while True:
+
+        mostrar_configuracion(cinta, posicion, estado, codificacion_m)
+
+        simbolo = cinta[posicion]
+
+        transicion = buscar_transicion(transiciones,estado,simbolo)
+
+        # Si no existe una transición, M se detiene
+        if transicion is None:
+            print(f"No existe una transición para {estado + simbolo}. La máquina se detiene.\n")
+            break
+
+        print("Transición encontrada:", transicion, "\n\n")
+
+        posicion, estado = ejecutar_transicion(cinta,posicion,transicion)
+
+
+main()
+```
+
+Link a Google Colab
+🔗 (https://colab.research.google.com/drive/1dyg4cI9e_Lc4GbeGnbhxOrYqnuc8MIMb?usp=sharing)
+
+
+
+### 3 - Pruebas de funcionamiento
+
 * Probar la simulación con diferentes entradas
 
 * Documentar los resultados
 
-#### 4 - Informe final
+<br>
+
+*Caso 1*
+
+<img src="./archivos/caso1.png" alt="Caso 1" width="500">
+
+<br>
+
+*Caso 2*
+
+<img src="./archivos/caso2.png" alt="Caso 2" width="500">
+
+<br>
+
+*Caso 3*
+
+<img src="./archivos/caso2.png" alt="Caso 3" width="500">
+
+
+
+### 4 - Informe final
+
 * Explicar la codificación utilizada
 
 * Mostrar ejemplos de ejecución
