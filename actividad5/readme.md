@@ -21,10 +21,10 @@ De esta manera, no es necesario construir una máquina diferente para cada probl
 La Máquina de Turing Universal (MTU) recibe como entrada la descripción codificada de la máquina M, representada como ⟨M⟩, junto con la cadena que debe procesar. En cada caso, la MTU simula el comportamiento de M sobre dicha cadena. Como M acepta todas las cadenas que finalizan en 01, se obtiene que:
 </p>
 
-* **U(⟨M⟩, 1101): <span style="color: green;">Acepta**</span>, porque la cadena 1101 finaliza en 01.
-* **U(⟨M⟩, 100): <span style="color: red;">Rechaza**</span>, porque la cadena 100 no finaliza en 01.
-* **U(⟨M⟩, 01): <span style="color: green;">Acepta**</span>, porque la cadena 01 finaliza en 01.
-* **U(⟨M⟩, 111): <span style="color: red;">Rechaza**</span>, porque la cadena 111 no finaliza en 01.
+* U(⟨M⟩, 1101):<span style="color: green;"> Acepta</span>, porque la cadena 1101 finaliza en 01.
+* U(⟨M⟩, 100):<span style="color: red;"> Rechaza</span>, porque la cadena 100 no finaliza en 01.
+* U(⟨M⟩, 01):<span style="color: green;"> Acepta</span>, porque la cadena 01 finaliza en 01.
+* U(⟨M⟩, 111):<span style="color: red;"> Rechaza</span>, porque la cadena 111 no finaliza en 01.
 
 Por lo tanto, la MTU obtiene en cada caso el mismo resultado que obtendría M al procesar directamente cada una de las cadenas, ya que su función es simular el comportamiento de la máquina M a partir de su descripción.
 
@@ -52,12 +52,12 @@ Para que la máquina alcance el estado qf, la cadena debe contener como mínimo 
 <p>b) Explicar qué información debería recibir una MTU para poder simular M</p>
 
 <div align="justify">
-Para poder simular a M, la MTU debe recibir una codificación de la máquina M y la cadena de entrada w que se desea procesar.
+Para poder simular a M, la MTU debe recibir una codificación de la máquina M, y la cadena de entrada w que se desea procesar.
 La codificación de M, debe contener la información necesaria para describir su funcionamiento: el alfabeto de entrada y de cinta, los estados y la función de transición. Estos elementos se representan mediante una codificación que la MTU pueda interpretar.
 Por lo tanto, la entrada de la MTU puede representarse como: </div>
-<div  align="center">(M,w)</div>
+<div  align="center">(⟨M⟩,w)</div>
 <div  align="justify">
-donde M corresponde a la descripción codificada de la máquina M y w es la cadena sobre la cual se realizará la simulación. A partir de esta información, la MTU puede reproducir paso a paso el comportamiento de M.
+donde ⟨M⟩ corresponde a la descripción codificada de la máquina M y w es la cadena sobre la cual se realizará la simulación. A partir de esta información, la MTU puede reproducir paso a paso el comportamiento de M.
 </div>
 <br>
 
