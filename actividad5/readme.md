@@ -124,39 +124,52 @@ Por lo tanto, la codificación de la cinta de MTU es la siguiente:
 
 ### 1 - Codificación de una máquina simple
 
-**Definir una máquina *M*... que obre el alfabeto {a,b}, acepte palabras que que contengan la subcadena "ab"**
+**Definir una máquina *M*... que sobre el alfabeto {a,b}, acepte palabras que que contengan la subcadena "ab"**
 
 #### JFLAP
 
-<img src="./archivos/MTab.png" alt="MT ab" width="800">
+Esta MT agrega al final de la palabra ingresada un caracter 's', o un caracter 'n', que indica si la palabra es aceptada o no aceptada por la misma.
 
-Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTab.jff)
+<br>
+
+<img src="./archivos/MTab_2.png" alt="MT ab" width="600">
+
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTab_2.jff)
 
 <br>
 
 #### Definición formal
 ```
-MT  = < Γ = {a,b,▯},
+MT  = < Γ = {a,b,▯,s,n},
         Σ = {a,b},
         b = {▯},
-        Q = {q0,q1,q2},
+        Q = {q0,q1,q2,qa,qr},
         q0 = q0,
-        F = {q2},
+        F = {qa,qr},
         δ = { 
               δ(q0,a)=(q1,a,R),
               δ(q0,b)=(q0,b,R),
+              δ(q0,▯)=(qr,n,S),
               δ(q1,a)=(q1,a,R),
-              δ(q1,b)=(q2,b,R)
+              δ(q1,b)=(q2,b,R),
+              δ(q1,▯)=(qr,n,S),
+              δ(q2,a)=(q2,a,R),
+              δ(q2,b)=(q2,b,R),
+              δ(q2,▯)=(qa,s,S),
             }
       >
 ```
 #### Matriz de transiciones
 
-| δ  | a   | b   |
-|:--:|:---:|:---:|
-| >q0 | q1,a,R | q0,b,R |
-| q1 | q1,a,R | q2,b,R | 
-| *q2  | -   | -   | 
+| δ  | a   | b   | ▯   | s   | n |
+|:--:|:---:|:---:|:---:|:---:|:---:|
+| >q0 | q1,a,R | q0,b,R | qr,n,S | - | - |
+| q1 | q1,a,R | q2,b,R | qr,n,S | - | - |
+| q2  | q2,a,R | q2,b,R | qa,s,S | - | - |
+| qa| - | - | - | - | - |
+| qr| - | - | - | - | - |
 
 <br>
 
@@ -166,50 +179,128 @@ MT  = < Γ = {a,b,▯},
 
 *Codificación de los estados:*
 
-<p>q0 = 00, q1 = 01, q2 = 10</p>
+| Estado  | Codificación |
+|:--:|:---:|
+| q0  | 000 |
+| q1  | 001 |
+| ▯  | 010 |
+| s  | 011 |
+| n  | 100 |
+
+<br>
 
 *Codificación de los símbolos:*
 
-<p>a = 0, b = 1</p>
+| Símbolo  | Codificación |
+|:--:|:---:|
+| a  | 000 |
+| b  | 001 |
+| q2  | 010 |
+| qa  | 011 |
+| qr  | 100 |
 
 <br>
 
 *Codificación de los movimientos:*
 
-<p>L = 1, R = 0</p>
+| Movimiento  | Codificación |
+|:--:|:---:|
+| R  | 000 |
+| L  | 001 |
+| S  | 010 |
 
 <br>
 
-*Codificación de M:*
+*Matriz de transiciones de M Codificada*
 
-|Q	|0|	1|
-|:---:|:---:|:---:|
-|00	|(01,0,0)	|(00,1,0)|
-|01	|(01,0,0)	|(10,1,0)|
-|10|	-|	-|
+| δ  | 000   | 001   | 010   | 011   | 100 |
+|:--:|:---:|:---:|:---:|:---:|:---:|
+| 000 | 001,000,000 | 000,001,000 | 100,100,010 | - | - |
+| 001 | 001,000,000 | 010,001,000 | 100,100,010 | - | - |
+| 010  | 010,000,000 | 010,001,000 | 011,011,010 | - | - |
+| 011| - | - | - | - | - |
+| 100| - | - | - | - | - |
+
 
 <br>
 
 *⟨M⟩*
 
-#0000100#0010010#0100100#0111010
+<div>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000 _</div>
+<div>#001010100100010#010000010000000#010001010001000#010010011011010</div>
 
 <br>
 
+
 *Ejemplo codificación MTU recibiendo "baba" como cadena*
 
-*010$001#0000100#0010010#0100100#0111010
+<div>Codificación de la cadena: 001000001000</div>
+<br>
+<div>***000001000$000001#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
+<div>#010000010000000#010001010001000#010010011011010</div>
 
 <br>
 
 *Simulación paso a paso*
 
-<div>*010$001#0000100#0010010#0100100#0111010</div>
-<div>1*10$000#0000100#0010010#0100100#0111010</div>
-<div>10*0$011#0000100#0010010#0100100#0111010</div>
-<div>101*$100#0000100#0010010#0100100#0111010</div>
-
+<div>***000001000$<span style="color: grey">000001</span>#000000001000000#<span style="color: grey">000001</span><span style="color: green">000001000</span>#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
+<div>#010000010000000#010001010001000#010010011011010</div>
 <br>
+<div>Busca la primera transición codificada de ⟨M⟩ que comience con 000001</div>
+<div>Encuentra <span style="color: grey">000001</span><span style="color: green">000001000</span>, donde lo destacado con verde se corresponderá con el estado al que transiciona (3 caracteres - 000), el símbolo con el que se reemplaza la posición actual del cabezal (3 caracteres - 001) y el movimiento que este tiene que realizar (3 caracteres - 000).</div>
+<br>
+<div>001***001000$<span style="color: grey">000000</span>#<span style="color: grey">000000</span><span style="color: green">001000000</span>#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
+<div>#010000010000000#010001010001000#010010011011010</div>
+<br>
+<div>001000***000$<span style="color: grey">001001</span>#000000001000000#000001000001000#000010100100010#001000001000000#<span style="color: grey">001001</span><span style="color: green">010001000</span>#001010100100010 _</div>
+<div>#010000010000000#010001010001000#010010011011010</div>
+<br>
+<div>001000001***$<span style="color: grey">010000</span>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
+<div>#<span style="color: grey">010000</span><span style="color: green">010000000</span>#010001010001000#010010011011010
+</div>
+<br>
+<div>001000001000***$<span style="color: grey">010010</span>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
+<div>#010000010000000#010001010001000#<span style="color: grey">010010</span><span style="color: green">011011010</span></div>
+<br>
+<div>001000001000***$<span style="color: grey">011011</span>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
+<div>#010000010000000#010001010001000#010010011011010</div>
+<br>
+<div>Como no encuentra ninguna transición que comience con 011011, no realiza ninguna iteración más. El contenido final de la cinta es:</div>
+<div><span style="color: grey">001</span><span style="color: green">000</span><span style="color: grey">001</span><span style="color: green">000</span><span style="color: grey">011</span></div>
+<br>
+<div>Que decodificado significa: babas. </div>
+<div>La MT codificada, agregaba un caracter 's' o 'n' al final de la palabra ingresada, para indicar si la palabra era aceptada o rechazada por la MT. En este caso, la palabra es aceptada.
+<br>
+<br>
+
+*Ejemplo codificación MTU recibiendo "b" como cadena*
+
+<div>Codificación de la cadena: 001</div>
+<br>
+
+*Simulación paso a paso*
+<br>
+<div>***$<span style="color: grey">000001</span>#000000001000000#<span style="color: grey">000001</span><span style="color: green">000001000</span>#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
+<div>#010000010000000#010001010001000#010010011011010</div>
+<br>
+<div>001***$<span style="color: grey">000010</span>#000000001000000#000001000001000#<span style="color: grey">000010</span><span style="color: green">100100010</span>#001000001000000#001001010001000#001010100100010 _</div>
+<div>#010000010000000#010001010001000#010010011011010</div>
+<br>
+<div>001***$<span style="color: grey">100100</span>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
+<div>#010000010000000#010001010001000#010010011011010</div>
+<br>
+<div>Como no encuentra ninguna transición que comience con 100100, no realiza ninguna iteración más. El contenido final de la cinta es:</div>
+<div><span style="color: grey">001</span><span style="color: green">100</span>
+<br>
+<div>Que decodificado significa: bn. </div>
+<div>La MT codificada, agregaba un caracter 's' o 'n' al final de la palabra ingresada, para indicar si la palabra era aceptada o rechazada por la MT. En este caso, la palabra es rechazada.
+<br>
+<br>
+
+
+
+
+
 
 ### 2 - Simulación básica
 
