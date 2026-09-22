@@ -241,6 +241,8 @@ MT  = < Γ = {a,b,▯,s,n},
 
 <br>
 
+<br>
+
 *Simulación paso a paso*
 
 <div>***000001000$<span style="color: grey">000001</span>#000000001000000#<span style="color: grey">000001</span><span style="color: green">000001000</span>#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
@@ -249,28 +251,30 @@ MT  = < Γ = {a,b,▯,s,n},
 <div>Busca la primera transición codificada de ⟨M⟩ que comience con 000001</div>
 <div>Encuentra <span style="color: grey">000001</span><span style="color: green">000001000</span>, donde lo destacado con verde se corresponderá con el estado al que transiciona (3 caracteres - 000), el símbolo con el que se reemplaza la posición actual del cabezal (3 caracteres - 001) y el movimiento que este tiene que realizar (3 caracteres - 000).</div>
 <br>
-<div>001***001000$<span style="color: grey">000000</span>#<span style="color: grey">000000</span><span style="color: green">001000000</span>#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
-<div>#010000010000000#010001010001000#010010011011010</div>
+<div>001***001000$<span style="color: grey">000000</span>#<span style="color: grey">000000</span><span style="color: green">001000000</span>#000001000001000#000010100100010#001000001000000#001001010001000# _</div>
+<div>#001010100100010#010000010000000#010001010001000#010010011011010</div>
 <br>
-<div>001000***000$<span style="color: grey">001001</span>#000000001000000#000001000001000#000010100100010#001000001000000#<span style="color: grey">001001</span><span style="color: green">010001000</span>#001010100100010 _</div>
-<div>#010000010000000#010001010001000#010010011011010</div>
+<div>001000***000$<span style="color: grey">001001</span>#000000001000000#000001000001000#000010100100010#001000001000000<span style="color: grey">001001</span> _</div>
+<div><span style="color: green">#010001000</span>#001010100100010#010000010000000#010001010001000#010010011011010</div>
 <br>
 <div>001000001***$<span style="color: grey">010000</span>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
 <div>#<span style="color: grey">010000</span><span style="color: green">010000000</span>#010001010001000#010010011011010
 </div>
 <br>
-<div>001000001000***$<span style="color: grey">010010</span>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
-<div>#010000010000000#010001010001000#<span style="color: grey">010010</span><span style="color: green">011011010</span></div>
+<div>001000001000***$<span style="color: grey">010010</span>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000 _</div>
+<div>#001010100100010#010000010000000#010001010001000#<span style="color: grey">010010</span><span style="color: green">011011010</span></div>
 <br>
-<div>001000001000***$<span style="color: grey">011011</span>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000#001010100100010 _</div>
-<div>#010000010000000#010001010001000#010010011011010</div>
+<div>001000001000***$<span style="color: grey">011011</span>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000 _</div>
+<div>#001010100100010#010000010000000#010001010001000#010010011011010</div>
 <br>
 <div>Como no encuentra ninguna transición que comience con 011011, no realiza ninguna iteración más. El contenido final de la cinta es:</div>
 <div><span style="color: grey">001</span><span style="color: green">000</span><span style="color: grey">001</span><span style="color: green">000</span><span style="color: grey">011</span></div>
 <br>
-<div>Que decodificado significa: babas. </div>
+<div>Que decodificado es: babas. </div>
 <div>La MT codificada, agregaba un caracter 's' o 'n' al final de la palabra ingresada, para indicar si la palabra era aceptada o rechazada por la MT. En este caso, la palabra es aceptada.
+
 <br>
+
 <br>
 
 *Ejemplo codificación MTU recibiendo "b" como cadena*
@@ -292,7 +296,7 @@ MT  = < Γ = {a,b,▯,s,n},
 <div>Como no encuentra ninguna transición que comience con 100100, no realiza ninguna iteración más. El contenido final de la cinta es:</div>
 <div><span style="color: grey">001</span><span style="color: green">100</span>
 <br>
-<div>Que decodificado significa: bn. </div>
+<div>Que decodificado es: bn. </div>
 <div>La MT codificada, agregaba un caracter 's' o 'n' al final de la palabra ingresada, para indicar si la palabra era aceptada o rechazada por la MT. En este caso, la palabra es rechazada.
 <br>
 <br>
