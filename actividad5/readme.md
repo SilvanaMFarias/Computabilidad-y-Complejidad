@@ -130,9 +130,7 @@ Por lo tanto, la codificación de la cinta de MTU es la siguiente:
 
 Esta MT agrega al final de la palabra ingresada un caracter 's', o un caracter 'n', que indica si la palabra es aceptada o no aceptada por la misma.
 
-<br>
-
-<img src="./archivos/MTab_2.png" alt="MT ab" width="600">
+<img src="./archivos/MTab_2.png" alt="MT ab" width="500">
 
 <br>
 
@@ -228,9 +226,8 @@ MT  = < Γ = {a,b,▯,s,n},
 
 <div>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000 _</div>
 <div>#001010100100010#010000010000000#010001010001000#010010011011010</div>
-
 <br>
-
+<br>
 
 *Ejemplo codificación MTU recibiendo "baba" como cadena*
 
@@ -240,7 +237,6 @@ MT  = < Γ = {a,b,▯,s,n},
 <div>#001010100100010#010000010000000#010001010001000#010010011011010</div>
 
 <br>
-
 <br>
 
 *Simulación paso a paso*
@@ -275,9 +271,8 @@ MT  = < Γ = {a,b,▯,s,n},
 <div>La MT codificada, agregaba un caracter 's' o 'n' al final de la palabra ingresada, para indicar si la palabra era aceptada o rechazada por la MT. En este caso, la palabra es aceptada.
 
 <br>
-
 <br>
-
+<br>
 *Ejemplo codificación MTU recibiendo "b" como cadena*
 
 <div>Codificación de la cadena: 001</div>
@@ -332,135 +327,13 @@ MT  = < Γ = {a,b,▯,s,n},
 
   <br>
 
-Hecha especialmente para esta MT. Falta ajustar para cualquier MT.
 ```
-def codificar_cadena(cadena):
-    # Convierte la cadena de entrada a la codificación utilizada por la MTU.
-    # a = 0
-    # b = 1
-
-    cadena_codificada = ""
-
-    for simbolo in cadena:
-        if simbolo == "a":
-            cadena_codificada += "0"
-        elif simbolo == "b":
-            cadena_codificada += "1"
-
-    return cadena_codificada
-
-
-def cargar_transiciones(codificacion):
-    # Separa la codificación de M en sus distintas transiciones.
-
-    return codificacion.split("#")
-
-
-def buscar_transicion(transiciones, estado, simbolo):
-    # Busca una transición que coincida con el estado actual
-    # y el símbolo leído. Si no la encuentra, devuelve None
-
-    trans_a_buscar = estado + simbolo
-
-    for transicion in transiciones:
-        if transicion.startswith(trans_a_buscar):
-            return transicion
-
-    return None
-
-def decodificar_transicion(transicion):
-    #Divide una transición codificada en:
-    #estado actual, símbolo leído, estado siguiente,
-    #símbolo escrito y movimiento.
-
-    estado_actual = transicion[0:2] # Posición 0 y 1
-    simbolo_leido = transicion[2] # Posición 2
-    estado_siguiente = transicion[3:5] # Posición 3 y 5
-    simbolo_escrito = transicion[5] # Posición 5
-    movimiento = transicion[6] # Posición 6
-
-    return estado_actual, simbolo_leido, estado_siguiente, simbolo_escrito, movimiento
-
-
-def mostrar_configuracion(cinta, posicion, estado,codificacion_m ):
-    # Muestra el estado actual de la simulación.
-
-    cinta_mostrar = cinta.copy()
-    caracter_leido = cinta[posicion]
-    cinta_mostrar[posicion] = "*"
-    print("".join(cinta_mostrar)+"$"+ estado + caracter_leido + codificacion_m, "\t")
-
-
-def ejecutar_transicion(cinta, posicion, transicion):
-    # Escribe el nuevo símbolo, mueve el cabezal y
-    # devuelve el nuevo estado y posición.
-
-    _, _, estado_siguiente, simbolo_escrito, movimiento = decodificar_transicion(transicion)
-
-    cinta[posicion] = simbolo_escrito
-
-    if movimiento == "0":       # Derecha
-        posicion += 1
-    elif movimiento == "1":     # Izquierda
-        posicion -= 1
-
-    return posicion, estado_siguiente
-
-
-
-def main():
-
-    # Codificacion de la maquina: #0000100#0010010#0100100#0111010
-    codificacion_m = input("Ingrese la codificacion de la maquina: ")
-    # cadena: baba
-    cadena = input("Ingrese la cadena: ")
-
-    # Codificar la cadena
-    cinta = list(codificar_cadena(cadena))
-
-    # Obtener las transiciones de M
-    transiciones = cargar_transiciones(codificacion_m)
-
-    # Configuración inicial
-    estado = "00"
-    posicion = 0
-
-    print("\n--- Simulación ---\n")
-
-    print(f"Cadena: {cadena}")
-    print(f"Codificacion de la maquina: {codificacion_m}\n\n")
-
-    while True:
-
-        mostrar_configuracion(cinta, posicion, estado, codificacion_m)
-
-        simbolo = cinta[posicion]
-
-        transicion = buscar_transicion(transiciones,estado,simbolo)
-
-        # Si no existe una transición, M se detiene
-        if transicion is None:
-            print(f"No existe una transición para {estado + simbolo}. La máquina se detiene.\n")
-            break
-
-        print("Transición encontrada:", transicion, "\n\n")
-
-        posicion, estado = ejecutar_transicion(cinta,posicion,transicion)
-
-        if posicion >= len(cinta):
-          print("El cabezal llegó al separador $. La máquina se detiene.")
-          break
-
-        if posicion < 0:
-          print("El cabezal salió del límite izquierdo de la cadena. La máquina se detiene.")
-          break
-
-main()
+En construcción - Vuelva más tarde
 
 ```
 
 Link a Google Colab
-🔗 (https://colab.research.google.com/drive/1dyg4cI9e_Lc4GbeGnbhxOrYqnuc8MIMb?usp=sharing)
+🔗 (https://colab.research.google.com/drive/14NSc1h79xVtPm6FBXoFygfAu1cNzvj_8?usp=sharing)
 
 <br>
 
@@ -470,26 +343,21 @@ Link a Google Colab
 
 * Documentar los resultados
 
-*Preguntas:*
-*Cómo distingo en este caso, si acepta o no la palabra?*
-*Conceptualmente, la MTU también está sobre una cinta infinita? Tengo que controlar a izq que no haya un blanco, o que no haya más símbolos que leer hacia la derecha (si ya llegué a $)?*
-<br>
-
-*Caso 1 - Acepta la palabra*
-
-<img src="./archivos/caso1.png" alt="Caso 1" width="500">
 
 <br>
 
-*Caso 2 - No acepta la palabra*
+*Caso 1 - **"baba"** - Acepta la palabra*
 
-<img src="./archivos/caso2.png" alt="Caso 2" width="500">
+<!--<img src="./archivos/caso1.png" alt="Caso 1" width="500">-->
 
 <br>
 
-*Caso 3 - No acepta la palabra*
+*Caso 2 - **"b"** - No acepta la palabra*
 
-<img src="./archivos/caso2.png" alt="Caso 3" width="500">
+<br>
+
+*Caso 3 - **"abbbb"** No acepta la palabra*
+
 
 
 
@@ -500,3 +368,6 @@ Link a Google Colab
 * Mostrar ejemplos de ejecución
 
 * Reflexionar sobre la relación entre la MTU y las computadoras modernas
+
+La máquina de Turing universal permite comprender una idea que también está presente en las computadoras modernas: una misma máquina puede realizar tareas diferentes según el programana que se ejecuta. La MTU recibe la codificación de una máquina de Turing y una cadena de entrada, e interpreta las transiciones de esa máquina para simular su funcionamiento.
+En este trabajo, el programa en Python cumple ese papel: recibe una máquina codificada y una entrada, y muestra su ejecución paso a paso. Si se cambia la codificación de la máquina de Turing, el simulador puede reproducir otro comportamiento sin modificar el programa. Esto permite ver como las instrucciones pueden representarse como datos para que otra máquina las lea y las ejecute.
