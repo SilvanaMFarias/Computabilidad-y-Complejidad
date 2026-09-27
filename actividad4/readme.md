@@ -8,6 +8,10 @@
 
 <br>
 
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC1.jff)
+
+<br>
+
 <b>*Ejemplo*</b>
 
 <p>Contenido inicial de la cinta</p>
@@ -18,15 +22,16 @@
 <p>Contenido final de la cinta</p>
 <img src="./archivos/1Resultado.png" alt="Salida 1" width="350">
 
-<br>
-
-Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC1.jff)
 <br><br>
 
 <p>2 - Duplicar una cadena de aes y bes en la cinta. Ejemplo: si la MT comienza con abbaa□ en su cinta, luego de procesar su programa debe terminar con abbaa□abbaa</p>
 
 <img src="./archivos/2mejora.png" alt="MT3" width="850">
 
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2Mejora.jff)
+<br>
 <br>
 
 <b>*Ejemplo*</b>
@@ -40,14 +45,15 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC1.jff)
 <img src="./archivos/2Resultado.png" alt="Salida 2" width="350">
 
 <br>
-
-Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2Mejora.jff)
-
 <br>
 
 <p>3 - Se dispone de una cinta en la que hay un número m de 1s seguido de un número n ≥ m de Aes. Se desea definir una MT que cambie las primeras m Aes por Bes. Se supone que la cabeza de la cinta inicialmente está en el 1 más a la izquierda </p>
 
 <img src="./archivos/3.png" alt="MT3" width="400">
+
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC3.jff)
 
 <br>
 
@@ -62,17 +68,16 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2Mejora.jff)
 <img src="./archivos/3Resultado.png" alt="Salida 3" width="350">
 
 <br>
-
-Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC3.jff)
-
 <br>
-
-
 <p>4 - Comprobar si dos palabras formadas con símbolos de Σ = {0, 1, 2} son iguales. Las dos palabras están separadas por el símbolo #</p>
 
 En este ejercicio, el contenido final de la cinta estará dado por el contenido original, seguida de una letra 's' si las dos palabras son iguales, o seguida de una letra 'n' si las dos palabras no lo son.
 
 <img src="./archivos/4_2.png" alt="MT4" width="900">
+
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4_2.jff)
 
 <br>
 
@@ -84,7 +89,7 @@ En este ejercicio, el contenido final de la cinta estará dado por el contenido 
 
 <img src="./archivos/4aInicio.png" alt="Entrada 4a" width="350">
 
-<br>
+
 <p>Contenido final de la cinta</p>
 <img src="./archivos/4aResultado.png" alt="Salida 4a" width="350">
 
@@ -113,10 +118,7 @@ En este ejercicio, el contenido final de la cinta estará dado por el contenido 
 <img src="./archivos/4cResultado.png" alt="Salida 4b" width="350">
 
 <br>
-
-
-
-
+<br>
 
 <p>5 - Sumatoria de (n + i) , con 1 ≤ i ≤ n, con n codificado en unario</p>
 
