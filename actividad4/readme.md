@@ -6,8 +6,6 @@
 
 <img src="./archivos/1.png" alt="MT1" width="800">
 
-<br>
-
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC1.jff)
 
 <br>
@@ -27,8 +25,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC1.jff)
 <p>2 - Duplicar una cadena de aes y bes en la cinta. Ejemplo: si la MT comienza con abbaa□ en su cinta, luego de procesar su programa debe terminar con abbaa□abbaa</p>
 
 <img src="./archivos/2mejora.png" alt="MT3" width="850">
-
-<br>
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2Mejora.jff)
 <br>
@@ -51,8 +47,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC2Mejora.jff)
 
 <img src="./archivos/3.png" alt="MT3" width="400">
 
-<br>
-
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC3.jff)
 
 <br>
@@ -74,8 +68,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC3.jff)
 En este ejercicio, el contenido final de la cinta estará dado por el contenido original, seguida de una letra 's' si las dos palabras son iguales, o seguida de una letra 'n' si las dos palabras no lo son.
 
 <img src="./archivos/4_2.png" alt="MT4" width="900">
-
-<br>
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4_2.jff)
 
@@ -137,8 +129,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4_2.jff)
 
 <img src="./archivos/11.png" alt="MT4" width="350">
 
-<br>
-
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
 
 <br>
@@ -167,9 +157,44 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
 <p>Contenido final de la cinta</p>
 <img src="./archivos/11bResultado.png" alt="Salida 4b" width="350">
 
-<br>cd
+<br>
 
 <p>12 - Para eliminar el blanco que separa los dos argumentos x e y, moviendo los símbolos de y un lugar hacia la izquierda. Σ = {a, b}</p>
+
+En este ejercicio, al no encontrar la manera de ingresar un ▯ por teclado, se lo sustituyó por un guión bajo (_), y es por eso que en la transición de q0 a q1 figura con ambas formas. La primera vez que se encuentra un _ es sustituido por ▯, no afectando el funcionamiento de lo solicitado.
+
+<img src="./archivos/12.png" alt="MT4" width="650">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff.jff)
+
+<br>
+
+<b>*Ejemplos*</b>
+
+<div>a) a▯bab</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/12aInicio.png" alt="Entrada 12a" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/12aResultado.png" alt="Salida 12a" width="350">
+
+<br>
+
+<div>b)  abb▯a</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/12bInicio.png" alt="Entrada 12b" width="350">
+
+<br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/12bResultado.png" alt="Salida 12b" width="350">
+
+<br>
+
 
 <p>13 - MT de 3 cintas que reste el número binario de la segunda cinta del número binario de la primera y deje el resultado en la tercer cinta. Hacer otra, suponiendo que la MT es de 2 cintas y que el resultado se deja sobre la segunda. Hacerlo también para que el resultado quede en la primera</p>
 
