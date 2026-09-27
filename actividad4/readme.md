@@ -70,14 +70,52 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC3.jff)
 
 <p>4 - Comprobar si dos palabras formadas con símbolos de Σ = {0, 1, 2} son iguales. Las dos palabras están separadas por el símbolo #</p>
 
-<img src="./archivos/4.png" alt="MT4" width="900">
-<img src="./archivos/4Resultado.png" alt="MT4" width="300">
+En este ejercicio, el contenido final de la cinta estará dado por el contenido original, seguida de una letra 's' si las dos palabras son iguales, o seguida de una letra 'n' si las dos palabras no lo son.
+
+<img src="./archivos/4_2.png" alt="MT4" width="900">
 
 <br>
 
-Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4.jff)
+<b>*Ejemplos*</b>
+
+<div>a) 12#120 - Las palabras NO son iguales</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/4aInicio.png" alt="Entrada 4a" width="350">
 
 <br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/4aResultado.png" alt="Salida 4a" width="350">
+
+<br>
+
+<div>b) 20#01 - Las palabras NO son iguales</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/4bInicio.png" alt="Entrada 4b" width="350">
+
+<br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/4bResultado.png" alt="Salida 4b" width="350">
+
+<br>
+
+<div>c) 012#012 - Las palabras SI son iguales</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/4cInicio.png" alt="Entrada 4b" width="350">
+
+<br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/4cResultado.png" alt="Salida 4b" width="350">
+
+<br>
+
+
+
 
 
 <p>5 - Sumatoria de (n + i) , con 1 ≤ i ≤ n, con n codificado en unario</p>
