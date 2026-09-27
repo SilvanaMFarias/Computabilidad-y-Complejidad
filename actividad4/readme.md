@@ -134,6 +134,41 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4_2.jff)
 
 <p>11 - Que recibe un número binario (cadena no vacía de 0’s y 1’s) y devuelve el siguiente número binario (es decir, le suma 1)</p>
 
+
+<img src="./archivos/11.png" alt="MT4" width="350">
+
+<br>
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
+
+<br>
+
+<b>*Ejemplos*</b>
+
+<div>a) 11</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/11aInicio.png" alt="Entrada 11a" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/11aResultado.png" alt="Salida 11a" width="350">
+
+<br>
+
+<div>b) 10</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/11bInicio.png" alt="Entrada 4b" width="350">
+
+<br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/11bResultado.png" alt="Salida 4b" width="350">
+
+<br>cd
+
 <p>12 - Para eliminar el blanco que separa los dos argumentos x e y, moviendo los símbolos de y un lugar hacia la izquierda. Σ = {a, b}</p>
 
 <p>13 - MT de 3 cintas que reste el número binario de la segunda cinta del número binario de la primera y deje el resultado en la tercer cinta. Hacer otra, suponiendo que la MT es de 2 cintas y que el resultado se deja sobre la segunda. Hacerlo también para que el resultado quede en la primera</p>
