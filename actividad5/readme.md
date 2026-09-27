@@ -245,7 +245,7 @@ MT  = < Γ = {a,b,▯,s,n},
 <div>#001010100100010#010000010000000#010001010001000#010010011011010</div>
 <br>
 <div>Busca la primera transición codificada de ⟨M⟩ que comience con 000001</div>
-<div>Encuentra <span style="color: grey">000001</span><span style="color: green">000001000</span>, donde lo destacado con verde se corresponderá con el estado al que transiciona (3 caracteres - 000), el símbolo con el que se reemplaza la posición actual del cabezal (3 caracteres - 001) y el movimiento que este tiene que realizar (3 caracteres - 000).</div>
+<p>Encuentra <span style="color: grey">000001</span><span style="color: green">000001000</span>, que se corresponderá con el estado actual (3 caracteres - 000), el símbolo que leyó (3 caracteres - 001), el estado al que transiciona (3 caracteres - 000), el símbolo con el que se reemplaza la posición actual del cabezal (3 caracteres - 001) y el movimiento que este tiene que realizar (3 caracteres - 000).</p>
 <br>
 <div>001***001000$<span style="color: grey">000000</span>#<span style="color: grey">000000</span><span style="color: green">001000000</span>#000001000001000#000010100100010#001000001000000#001001010001000 _</div>
 <div>#001010100100010#010000010000000#010001010001000#010010011011010</div>
@@ -468,7 +468,7 @@ Link a Google Colab
 <img src="./archivos/caso1d.png" alt="Caso 1">
 
 <br>
-El contenido final de la cinta es: 001000001000011
+<div>El contenido final de la cinta es: 001000001000011</div>
 <div>Según la codificación utilizada se corresponde con: babas (la palabra original, seguida de una s, que indica que la palabra es aceptada).</div>
 
 <br>
@@ -481,7 +481,7 @@ El contenido final de la cinta es: 001000001000011
 <img src="./archivos/caso2c.png" alt="Caso 2">
 
 <br>
-El contenido final de la cinta es: 001100
+<div>El contenido final de la cinta es: 001100</div>
 <div>Según la codificación utilizada se corresponde con: bn (la palabra original, seguida de una n, que indica que la palabra no es aceptada).</div>
 
 <br>
@@ -495,7 +495,7 @@ El contenido final de la cinta es: 001100
 <img src="./archivos/caso3c.png" alt="Caso 3">
 
 <br>
-El contenido final de la cinta es: 001001000100
+<div>El contenido final de la cinta es: 001001000100</div>
 <div>Según la codificación utilizada se corresponde con: bban (la palabra original, seguida de una n, que indica que la palabra no es aceptada).</div>
 
 <br>
@@ -583,7 +583,7 @@ El contenido final de la cinta es: 001001000100
 <img src="./archivos/punto4caso1d.png" alt="Caso 1">
 
 <br>
-El contenido final de la cinta es: 01000010
+<div>El contenido final de la cinta es: 01000010</div>
 <div>Según la codificación utilizada se corresponde con: 100▯</div>
 <br>
 <br>
@@ -660,7 +660,7 @@ El contenido final de la cinta es: 01000010
 <img src="./archivos/punto4caso2c.png" alt="Caso 2">
 
 <br>
-El contenido final de la cinta es: 000010
+<div>El contenido final de la cinta es: 000010</div>
 <div>Según la codificación utilizada se corresponde con: 00▯</div>
 <br>
 <br>
