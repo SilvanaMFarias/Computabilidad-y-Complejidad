@@ -181,9 +181,9 @@ MT  = < Γ = {a,b,▯,s,n},
 |:--:|:---:|
 | q0  | 000 |
 | q1  | 001 |
-| ▯  | 010 |
-| s  | 011 |
-| n  | 100 |
+| q2  | 010 |
+| qa  | 011 |
+| qr  | 100 |
 
 <br>
 
@@ -193,9 +193,9 @@ MT  = < Γ = {a,b,▯,s,n},
 |:--:|:---:|
 | a  | 000 |
 | b  | 001 |
-| q2  | 010 |
-| qa  | 011 |
-| qr  | 100 |
+| ▯  | 010 |
+| s  | 011 |
+| n  | 100 |
 
 <br>
 
@@ -273,6 +273,7 @@ MT  = < Γ = {a,b,▯,s,n},
 <br>
 <br>
 <br>
+
 *Ejemplo codificación MTU recibiendo "b" como cadena*
 
 <div>Codificación de la cadena: 001</div>
@@ -296,11 +297,6 @@ MT  = < Γ = {a,b,▯,s,n},
 <div>La MT codificada, agregaba un caracter 's' o 'n' al final de la palabra ingresada, para indicar si la palabra era aceptada o rechazada por la MT. En este caso, la palabra es rechazada.
 <br>
 <br>
-
-
-
-
-
 
 ### 2 - Simulación básica
 
@@ -328,8 +324,126 @@ MT  = < Γ = {a,b,▯,s,n},
   <br>
 
 ```
-En construcción - Vuelva más tarde
+def cargar_transiciones(codificacion):
+    # Separa la codificación de M en sus distintas transiciones.
 
+    return codificacion.lstrip("#").split("#")
+
+
+def buscar_transicion(transiciones, estado, simbolo):
+    # Busca una transición que coincida con el estado actual
+    # y el símbolo leído. Si no la encuentra, devuelve None
+
+    trans_a_buscar = estado + "".join(simbolo)
+
+    for transicion in transiciones:
+        if transicion.startswith(trans_a_buscar):
+            return transicion
+
+    return None
+
+def decodificar_transicion(transicion, cant_car_estado, cant_car_simbolo):
+    # Divide una transición codificada en:
+    # estado actual, símbolo leído, estado siguiente,
+    # símbolo escrito y movimiento.
+
+    estado_actual = transicion[0:cant_car_estado]
+    print(f"Estado actual: {estado_actual}")
+    simbolo_leido = transicion[cant_car_estado:cant_car_estado+cant_car_simbolo]
+    print(f"Simbolo leido: {simbolo_leido}")
+    estado_siguiente = transicion[cant_car_estado+cant_car_simbolo:(cant_car_estado*2)+cant_car_simbolo]
+    print(f"Estado siguiente: {estado_siguiente}")
+    simbolo_escrito = transicion[(cant_car_estado*2)+cant_car_simbolo:((cant_car_estado+cant_car_simbolo)*2)]
+    print(f"Símbolo a escribir: {simbolo_escrito}")
+    movimiento = transicion[(cant_car_estado+cant_car_simbolo)*2:]
+    print(f"Movimiento: {movimiento}\n")
+
+    return estado_actual, simbolo_leido, estado_siguiente, simbolo_escrito, movimiento
+
+
+def mostrar_configuracion(cinta, posicion_cabezal, cant_car_simbolo, estado, codificacion_m):
+    # Muestra el estado actual de la simulación.
+
+    cinta_mostrar = cinta.copy()
+    simbolo_leido = cinta[posicion_cabezal:posicion_cabezal+cant_car_simbolo]
+    cinta_mostrar[posicion_cabezal:posicion_cabezal + cant_car_simbolo] = (["*"] * cant_car_simbolo)
+    print("".join(cinta_mostrar)+"$"+ estado + "".join(simbolo_leido) + codificacion_m, "\n")
+
+def ejecutar_transicion(cinta, posicion_cabezal, cant_car_estado, cant_car_simbolo, transicion, derecha, izquierda):
+    # Escribe el nuevo símbolo, mueve el cabezal y devuelve el nuevo estado y posición.
+
+    _, _, estado_siguiente, simbolo_escrito, movimiento = decodificar_transicion(transicion, cant_car_estado, cant_car_simbolo)
+
+    # Escribe el símbolo por el que se reemplaza los *** en la cinta
+    cinta[posicion_cabezal:posicion_cabezal + cant_car_simbolo] = list(simbolo_escrito)
+
+    if movimiento == derecha: # Derecha
+        posicion_cabezal += 1 * cant_car_simbolo
+    elif movimiento == izquierda: # Izquierda
+        posicion_cabezal -= 1 * cant_car_simbolo
+    # En caso de un Stay, no modifica la posicion del cabezal
+
+    return posicion_cabezal, estado_siguiente
+
+def main():
+
+    codificacion_m = input("Ingrese la codificacion de la maquina (Formato #<transicionCodificada>#<tc>...): ")
+    cadena_codificada = input("\nIngrese la cadena codificada: ")
+    cant_car_estado = int(input ("\nIngrese la cantidad de caracteres que ocupa el estado: "))
+    cant_car_simbolo  = int(input ("\nIngrese la cantidad de caracteres que ocupa el símbolo: "))
+    simbolo_blanco  = input ("\nIngrese la codificacion del simbolo blanco: ")
+    derecha  = input ("\nIngrese la codificacion del movimiento RIGHT: ")
+    izquierda  = input ("\nIngrese la codificacion del movimiento LEFT: ")
+
+    # Transforma la cadena codificada en una lista
+    cinta = list(cadena_codificada)
+
+    # Obtiene una las transiciones de M
+    transiciones = cargar_transiciones(codificacion_m)
+
+    # -- Configuración inicial -- #
+    # Posición inicial del cabezal
+    posicion_cabezal = 0
+    # Estado inicial
+    estado = transiciones[0][posicion_cabezal:posicion_cabezal+cant_car_estado]
+
+    print("\n\n--- Simulación ---\n")
+
+    print(f"Cadena codificada: {cadena_codificada}")
+    print(f"Codificacion de la maquina: {codificacion_m}\n\n")
+
+    while True:
+
+        mostrar_configuracion(cinta, posicion_cabezal, cant_car_simbolo, estado, codificacion_m)
+
+        simbolo = cinta[posicion_cabezal:posicion_cabezal + cant_car_simbolo]
+
+        transicion = buscar_transicion(transiciones, estado, simbolo)
+
+
+        # Si no existe una transición, M se detiene
+        if transicion is None:
+            print(f"No existe una transición para {estado + "".join(simbolo)}. La máquina se detiene.\n")
+            print(f"Estado final de la cinta: {"".join(cinta)}")
+            break
+
+        print("Transición encontrada:", transicion, "\n")
+        posicion_cabezal, estado = ejecutar_transicion(cinta, posicion_cabezal, cant_car_estado, cant_car_simbolo, transicion, derecha, izquierda)
+
+        # Si al ejecutar la transicion se fue del limite derecho de la lista, 
+        # agrega un símbolo blanco al final de la misma
+
+        if posicion_cabezal >= len(cinta):
+            cinta.extend(simbolo_blanco)
+
+        # Si al ejecutar la transicion se fue del limite izquierdo de la lista, 
+        # agrega un símbolo blanco al inicio de la misma y reposiciona el cabezal
+
+        if posicion_cabezal < 0:
+            cinta[:0] = list(simbolo_blanco)
+            posicion_cabezal = 0
+
+main()
 ```
 
 Link a Google Colab
@@ -348,26 +462,211 @@ Link a Google Colab
 
 *Caso 1 - **"baba"** - Acepta la palabra*
 
-<!--<img src="./archivos/caso1.png" alt="Caso 1" width="500">-->
+<img src="./archivos/caso1a.png" alt="Caso 1">
+<img src="./archivos/caso1b.png" alt="Caso 1">
+<img src="./archivos/caso1c.png" alt="Caso 1">
+<img src="./archivos/caso1d.png" alt="Caso 1">
 
+<br>
+El contenido final de la cinta es: 001000001000011
+<div>Según la codificación utilizada se corresponde con: babas (la palabra original, seguida de una s, que indica que la palabra es aceptada).</div>
+
+<br>
 <br>
 
 *Caso 2 - **"b"** - No acepta la palabra*
 
+<img src="./archivos/caso2a.png" alt="Caso 2">
+<img src="./archivos/caso2b.png" alt="Caso 2">
+<img src="./archivos/caso2c.png" alt="Caso 2">
+
+<br>
+El contenido final de la cinta es: 001100
+<div>Según la codificación utilizada se corresponde con: bn (la palabra original, seguida de una n, que indica que la palabra no es aceptada).</div>
+
+<br>
 <br>
 
-*Caso 3 - **"abbbb"** No acepta la palabra*
+*Caso 3 - **"bba"** No acepta la palabra*
 
 
+<img src="./archivos/caso3a.png" alt="Caso 3">
+<img src="./archivos/caso3b.png" alt="Caso 3">
+<img src="./archivos/caso3c.png" alt="Caso 3">
+
+<br>
+El contenido final de la cinta es: 001001000100
+<div>Según la codificación utilizada se corresponde con: bban (la palabra original, seguida de una n, que indica que la palabra no es aceptada).</div>
+
+<br>
 
 
 ### 4 - Informe final
 
-* Explicar la codificación utilizada
-
 * Mostrar ejemplos de ejecución
+
+<br>
+
+**A) Ejemplo MT que calcula el nro consecutivo de un binario**
+
+<br>
+<img src="./archivos/punto4caso1.png" alt="Caso 1" width="300">
+
+#### Matriz de transiciones
+
+| δ  | 0   | 1   | ▯   | 
+|:--:|:---:|:---:|:---:|
+| >q0 | q0,0,R | q0,1,R | q1,▯,L | 
+| q1 | q2,1,S | q1,0,L | q2,1,S |
+| q2  | - | - | - |
+
+
+<br>
+
+**Codificación de sus estados, símbolos y transiciones en forma numérica**
+
+<br>
+
+*Codificación de los estados:*
+
+| Estado  | Codificación |
+|:--:|:---:|
+| q0  | 00 |
+| q1  | 01 |
+| q2  | 10 |
+
+<br>
+
+*Codificación de los símbolos:*
+
+| Símbolo  | Codificación |
+|:--:|:---:|
+| a  | 00 |
+| b  | 01 |
+| ▯  | 10 |
+
+
+<br>
+
+*Codificación de los movimientos:*
+
+| Movimiento  | Codificación |
+|:--:|:---:|
+| R  | 00 |
+| L  | 01 |
+| S  | 10 |
+
+<br>
+
+*Matriz de transiciones de M Codificada*
+
+| δ  | 00   | 01   | 10   |
+|:--:|:---:|:---:|:---:|
+| 00 | 00,00,00 | 00,01,00 | 01,10,01 | 
+| 01 | 10,01,10 | 01,00,01 | 10,01,10 | 
+| 10  | - | - | - |
+
+
+<br>
+
+*⟨M⟩*
+
+<div>#0000000000#0001000100#0010011001#0100100110#0101010001#0110100110</div>
+
+<br>
+
+**Ejecución con el número "11" como entrada**
+
+<img src="./archivos/punto4caso1a.png" alt="Caso 1">
+<img src="./archivos/punto4caso1b.png" alt="Caso 1">
+<img src="./archivos/punto4caso1c.png" alt="Caso 1">
+<img src="./archivos/punto4caso1d.png" alt="Caso 1">
+
+<br>
+El contenido final de la cinta es: 01000010
+<div>Según la codificación utilizada se corresponde con: 100▯</div>
+<br>
+<br>
+
+**B) Ejemplo MT que calcula el complemento a 1 de un número binario**
+
+<br>
+<img src="./archivos/punto4caso2.png" alt="Caso 1" width="300">
+
+#### Matriz de transiciones
+
+| δ  | 0   | 1   | ▯   | 
+|:--:|:---:|:---:|:---:|
+| >q0 | q0,1,R | q0,0,R | q1,▯,S | 
+| q1  | - | - | - |
+
+
+<br>
+
+**Codificación de sus estados, símbolos y transiciones en forma numérica**
+
+<br>
+
+*Codificación de los estados:*
+
+| Estado  | Codificación |
+|:--:|:---:|
+| q0  | 0 |
+| q1  | 1 |
+
+
+<br>
+
+*Codificación de los símbolos:*
+
+| Símbolo  | Codificación |
+|:--:|:---:|
+| 0  | 00 |
+| 1  | 01 |
+| ▯  | 10 |
+
+
+<br>
+
+*Codificación de los movimientos:*
+
+| Movimiento  | Codificación |
+|:--:|:---:|
+| R  | 00 |
+| L  | 01 |
+| S  | 10 |
+
+<br>
+
+*Matriz de transiciones de M Codificada*
+
+| δ  | 00   | 01   | 10   |
+|:--:|:---:|:---:|:---:|
+| 0 | 0,01,00 | 0,00,00 | 1,10,10 | 
+| 1 | -| - | - | 
+
+<br>
+
+*⟨M⟩*
+
+<div>#00000100#00100000#01011010</div>
+
+<br>
+
+**Ejecución con el número "11" como entrada**
+
+<img src="./archivos/punto4caso2a.png" alt="Caso 2">
+<img src="./archivos/punto4caso2b.png" alt="Caso 2">
+<img src="./archivos/punto4caso2c.png" alt="Caso 2">
+
+<br>
+El contenido final de la cinta es: 000010
+<div>Según la codificación utilizada se corresponde con: 00▯</div>
+<br>
+<br>
 
 * Reflexionar sobre la relación entre la MTU y las computadoras modernas
 
-La máquina de Turing universal permite comprender una idea que también está presente en las computadoras modernas: una misma máquina puede realizar tareas diferentes según el programana que se ejecuta. La MTU recibe la codificación de una máquina de Turing y una cadena de entrada, e interpreta las transiciones de esa máquina para simular su funcionamiento.
-En este trabajo, el programa en Python cumple ese papel: recibe una máquina codificada y una entrada, y muestra su ejecución paso a paso. Si se cambia la codificación de la máquina de Turing, el simulador puede reproducir otro comportamiento sin modificar el programa. Esto permite ver como las instrucciones pueden representarse como datos para que otra máquina las lea y las ejecute.
+<br>
+<div align="justify">La máquina de Turing universal permite comprender una idea que también está presente en las computadoras modernas: una misma máquina puede realizar tareas diferentes según el programana que se ejecuta. La MTU recibe la codificación de una máquina de Turing y una cadena de entrada, e interpreta las transiciones de esa máquina para simular su funcionamiento.
+En este trabajo, el programa en Python cumple ese papel: recibe una máquina codificada y una entrada, y muestra su ejecución paso a paso. Si se cambia la codificación de la máquina de Turing, el simulador puede reproducir otro comportamiento sin modificar el programa. Esto permite ver como las instrucciones pueden representarse como datos para que otra máquina las lea y las ejecute.</div>
