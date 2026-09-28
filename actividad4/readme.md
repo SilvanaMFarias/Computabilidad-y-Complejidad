@@ -204,6 +204,42 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff.jff)
 
 <p>16 - Dados dos números binarios separados por el símbolo *, defina y construya una MT que calcule la suma de ambos números</p>
 
+Para este ejercicio, se usa la estrategia de decrementar el segundo número e incrementar el primero.
+
+
+<img src="./archivos/16.png" alt="MT4" width="650">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC16.jff.jff)
+
+<br>
+
+<b>*Ejemplos*</b>
+
+<div>a) 01*01</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/16aInicio.png" alt="Entrada 16a" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/16aResultado.png" alt="Salida 16b" width="350">
+
+<br>
+
+<div>b) 11*101 </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/16bInicio.png" alt="Entrada 16b" width="350">
+
+<br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/16bResultado.png" alt="Salida 16b" width="350">
+
+<br>
+
+
 <p>17 - Dadas dos cadenas de palotes, separadas por el símbolo * defina y construya una MT que decida si la primera cadena es submúltiplo de la segunda, y cuántas veces. Pruebe la solución hallada con las siguientes cadenas:</p>
 <p>|||*|||||| (es submúltiplo, dos veces)</p>
 <p>||*||||| (no es submúltiplo)</p>
