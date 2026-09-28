@@ -42,8 +42,8 @@ Por lo tanto, la MTU obtiene en cada caso el mismo resultado que obtendría M al
 <p>a) Explicar que hace M</p>
 
 <p  align="justify">
-La máquina M invierte el primer símbolo de la cadena de entrada: si lee 0, lo reemplaza por 1, y si lee 1, lo reemplaza por 0. Luego avanza hacia la derecha y lee el segundo símbolo sin alterar su valor, pasando finalmente al estado de aceptación qf.
-Para que la máquina alcance el estado qf, la cadena debe contener como mínimo dos símbolos. Si la entrada tiene solamente un símbolo (0 o 1), luego de procesarlo la máquina queda en q1 leyendo un blanco. Como no existe una transición definida para ese caso, se detiene sin alcanzar el estado final.
+La máquina M invierte el primer símbolo de la cadena de entrada: si lee 0, lo reemplaza por 1, y si lee 1, lo reemplaza por 0. Luego avanza hacia la derecha y lee el segundo símbolo sin alterar su valor, pasando finalmente al estado qf.
+Para que la máquina alcance el estado qf, la cadena debe contener como mínimo dos símbolos. Si la entrada tiene solamente un símbolo (0 o 1), luego de procesarlo la máquina queda en q1 leyendo un blanco. Como no existe una transición definida para ese caso, se detiene sin alcanzar el estado qf.
 </p>
 
 <img src="./archivos/MT3.png" alt="MT Punto 3" width="250">
@@ -93,7 +93,7 @@ A partir de la información de la MT, realizamos la codificación de los símbol
 
 <br>
 
-*Codificación de M:*
+*Matriz de transiciones codificada:*
 
 |Q	|0|	1|
 |:---:|:---:|:---:|
@@ -107,18 +107,27 @@ A partir de la información de la MT, realizamos la codificación de los símbol
 
 #0000110#0010100#0101000#0111010
 
+Esto se obtiene a través de la codificación de cada transición, y es representado por el estado actual, el símbolo leído, el nuevo estado, el símbolo escrito y el movimiento de la cabeza.
+
 <br>
 
 *Codificación de la cinta de MTU sabiendo que configuración de la cinta de MT M es 1 q0 0 1 1*
 
 En este caso, la máquina se encuentra en el estado q0, y el símbolo sobre el que se encuentra la cabeza es el 0. La palabra de la cinta que precede a la celda sobre la que se encuentra la cabeza de entrada/salida es 1, y la que se encuentra a continuación de la misma es 11.
 
-Por lo tanto, la codificación de la cinta de MTU es la siguiente:
+Por lo tanto, la codificación de la cinta de MTU en ese momento es la siguiente:
 
 1*11$000#0000110#0010100#0101000#0111010
 
+Esta codificación puede dividirse en 3 partes:
 <br>
+* Lo anterior al signo $ representa una entrada codificada en la cinta, y el * el símbolo sobre la cual la cabeza de lectura/escritura se encuentra posicionada en ese momento
 
+* Lo que se encuentra entre $ y el primer #, que corresponden al estado actual codificado seguido del caracter leido (00 y 0)
+
+* Lo que empieza con #, que corresponde a la codificación de las transiciones, utilizando # como separador entre las mismas.
+
+<br>
 <hr>
 
 
@@ -226,7 +235,6 @@ MT  = < Γ = {a,b,▯,s,n},
 
 <div>#000000001000000#000001000001000#000010100100010#001000001000000#001001010001000 _</div>
 <div>#001010100100010#010000010000000#010001010001000#010010011011010</div>
-<br>
 <br>
 
 *Ejemplo codificación MTU recibiendo "baba" como cadena*
