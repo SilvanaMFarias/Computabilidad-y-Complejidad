@@ -201,6 +201,86 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff)
 
 <p>14 - MT de 3 cintas que determine si el número binario que está en la primera cinta es menor que el de la segunda. Si es menor, escribir el símbolo S sobre la tercer cinta y si no lo es, escribir los símbolos GE sobre la tercer cinta</p>
 
+<br>
+
+Para este ejercicio, se controla si el número binario está representado por la misma cantidad de caracteres:
+  * Si recorriendo C1 y C2 caracter a caracter, C1 llega primero al ▯, el número de C1 < al número de C2 (q1 - Resultado en C3 = S)
+  * Si recorriendo C1 y C2 caracter a caracter, C2 llega primero al ▯, el número de C2 < al número de C1 (q3 - Resultado en C3 = GE)
+Si ambas cintas llegan al ▯ al mismo tiempo, es decir, tiene la misma cantidad de caracteres, vuelve al inicio de ambas cintas, y moviéndo la cabeza a derecha chequea valores de C1 Y C2 en cada posición. Mientras la posición de C1 Y C2 es igual (C1=0 y C2=0 O C1=1 y C2=1), sigue iterando hacia derecha. Si encuentra que C1=0 y en C2=1, quiere decir que el número de C1 < al número de C2 (q6 - Resultado en C3 = S). Si encuentra, en cambio, que C1=1 y en C2=0, quiere decir que el número de C2 > al número de C2 (q8 - Resultado en C3 = GE). Si ambas cintas llegan a ▯ al mismo tiempo, quiere decir que ambos números son iguales y el resultado tiene que ser GE (q8).
+
+<br>
+
+<img src="./archivos/14.png" alt="MT14" width="900">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC14.jff)
+
+<br>
+
+<b>Ejemplos</b>
+<br>
+<p>Cuando la cantidad de caracteres en C1 Y C2 son diferentes:
+
+<div>a) C1 = 10 / C2 = 101 - Resultado C3 = S</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/14aInicio.png" alt="Entrada 14a" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/14aResultado.png" alt="Salida 14a" width="350">
+
+<br>
+
+<div>b) C1 = 101 / C2 = 10 - Resultado C3 = GE </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/14bInicio.png" alt="Entrada 14b" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/14bResultado.png" alt="Salida 14b" width="350">
+
+<br>
+<br>
+<p>Cuando la cantidad de caracteres en C1 Y C2 son iguales:
+<div>c) C1 = 100 / C2 = 101 - Resultado C3 = S </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/14cInicio.png" alt="Entrada 14c" width="350">
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/14cResultado.png" alt="Salida 14c" width="350">
+
+<br>
+
+<div>d) C1 = 111 / C2 = 100 - Resultado C3 = GE </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/14dInicio.png" alt="Entrada 14d" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/14dResultado.png" alt="Salida 14d" width="350">
+
+br>
+
+<div>e) C1 = 10 / C2 = 10 - Resultado C3 = GE </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/14eInicio.png" alt="Entrada 14e" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/14eResultado.png" alt="Salida 14e" width="350">
+
+<br>
+<br>
+
 <p>15 - Una cinta contiene dos cadenas binarias X e Y separadas por el símbolo * tales que la longitud de cada cadena es la mínima necesaria para representar el número correspondiente (es decir, que ninguno de los números comienzan con cero). En esas condiciones construir una MT que devuelva los valores 0, 1 ó 2 según sea X = Y, X > Y o X < Y respectivamente</p>
 
 <br>
