@@ -202,12 +202,66 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff)
 
 <p>15 - Una cinta contiene dos cadenas binarias X e Y separadas por el símbolo * tales que la longitud de cada cadena es la mínima necesaria para representar el número correspondiente (es decir, que ninguno de los números comienzan con cero). En esas condiciones construir una MT que devuelva los valores 0, 1 ó 2 según sea X = Y, X > Y o X < Y respectivamente</p>
 
+<br>
+
+Para este ejercicio, al inicio, se lee todo el contenido ingresado, y se coloca un # al final del mismo. Al llegar a un estado final de la MT, lo siguiente al # indicará:
+- con 0, que la cantidad de X es igual a la cantidad de Y
+- con 1, que la cantidad de X es > a la cantidad de Y
+- con 2, que la cantidad de X es < a la cantidad de Y
+
+<br>
+
+<img src="./archivos/15.png" alt="MT15" width="900">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC15.jff)
+
+<br>
+
+<b>*Ejemplos*</b>
+
+<div>a) XX*YY / Caso X = Y - Resultado 0</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/15aInicio.png" alt="Entrada 15a" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/15aResultado.png" alt="Salida 15a" width="350">
+
+<br>
+
+<div>b) XXXX*YY / Caso X > Y - Resultado 1 </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/15bInicio.png" alt="Entrada 15b" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/15bResultado.png" alt="Salida 15b" width="350">
+
+<br>
+
+<div>c) X*YYY / Caso X < Y - Resultado 2 </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/15cInicio.png" alt="Entrada 15c" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/15cResultado.png" alt="Salida 15c" width="350">
+
+<br>
+
+
 <p>16 - Dados dos números binarios separados por el símbolo *, defina y construya una MT que calcule la suma de ambos números</p>
 
 Para este ejercicio, se usa la estrategia de decrementar el segundo número e incrementar el primero.
 
 
-<img src="./archivos/16.png" alt="MT16" width="650">
+<img src="./archivos/16.png" alt="MT16" width="600">
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC16.jff)
 
@@ -249,7 +303,7 @@ Para este ejercicio, al inicio, se lee todo el contenido ingresado, y se coloca 
 - con 1, la cantidad de veces que la primer cadena es submúltiplo de la segunda.
 
 <br>
-<img src="./archivos/17.png" alt="MT17" width="900">
+<img src="./archivos/17.png" alt="MT17" width="950">
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC17.jff)
 
