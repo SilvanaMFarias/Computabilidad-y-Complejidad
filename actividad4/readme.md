@@ -127,7 +127,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4_2.jff)
 <p>11 - Que recibe un número binario (cadena no vacía de 0’s y 1’s) y devuelve el siguiente número binario (es decir, le suma 1)</p>
 
 
-<img src="./archivos/11.png" alt="MT4" width="350">
+<img src="./archivos/11.png" alt="MT11" width="350">
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
 
@@ -163,9 +163,9 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
 
 En este ejercicio, al no encontrar la manera de ingresar un ▯ por teclado, se lo sustituyó por un guión bajo (_), y es por eso que en la transición de q0 a q1 figura con ambas formas. La primera vez que se encuentra un _ es sustituido por ▯, no afectando el funcionamiento de lo solicitado.
 
-<img src="./archivos/12.png" alt="MT4" width="650">
+<img src="./archivos/12.png" alt="MT12" width="650">
 
-Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff.jff)
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff)
 
 <br>
 
@@ -207,9 +207,9 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff.jff)
 Para este ejercicio, se usa la estrategia de decrementar el segundo número e incrementar el primero.
 
 
-<img src="./archivos/16.png" alt="MT4" width="650">
+<img src="./archivos/16.png" alt="MT16" width="650">
 
-Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC16.jff.jff)
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC16.jff)
 
 <br>
 
@@ -243,3 +243,50 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC16.jff.jff)
 <p>17 - Dadas dos cadenas de palotes, separadas por el símbolo * defina y construya una MT que decida si la primera cadena es submúltiplo de la segunda, y cuántas veces. Pruebe la solución hallada con las siguientes cadenas:</p>
 <p>|||*|||||| (es submúltiplo, dos veces)</p>
 <p>||*||||| (no es submúltiplo)</p>
+
+Para este ejercicio, al inicio, se lee todo el contenido ingresado, y se coloca un # al final del mismo. Al llegar a un estado final de la MT, lo siguiente al # indicará:
+- con 0, que la primer cadena no es submúltiplo de la segunda.
+- con 1, la cantidad de veces que la primer cadena es submúltiplo de la segunda.
+
+<br>
+<img src="./archivos/17.png" alt="MT17" width="900">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC17.jff)
+
+<br>
+
+<b>*Ejemplos*</b>
+
+<div>a) | | | * | | - No es submúltiplo </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/17aInicio.png" alt="Entrada 17a" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/17aResultado.png" alt="Salida 17a" width="350">
+
+<br>
+
+<div>b) | | | * | | | | | | - Es submúltiplo, 2 veces </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/17bInicio.png" alt="Entrada 17b" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/17bResultado.png" alt="Salida 17b" width="350">
+
+<br>
+
+<div>c) | |  * | | | | |  - No es submúltiplo</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/17cInicio.png" alt="Entrada 17c" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/17cResultado.png" alt="Salida 17c" width="350">
