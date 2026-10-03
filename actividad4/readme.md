@@ -201,9 +201,8 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff)
 
 <p>14 - MT de 3 cintas que determine si el número binario que está en la primera cinta es menor que el de la segunda. Si es menor, escribir el símbolo S sobre la tercer cinta y si no lo es, escribir los símbolos GE sobre la tercer cinta</p>
 
-<br>
 
-Para este ejercicio, se controla si el número binario está representado por la misma cantidad de caracteres:
+Para la primera versión de este ejercicio, se controla si el número binario está representado por la misma cantidad de caracteres:
   * Si recorriendo C1 y C2 caracter a caracter, C1 llega primero al ▯, el número de C1 < al número de C2 (q1 - Resultado en C3 = S)
   * Si recorriendo C1 y C2 caracter a caracter, C2 llega primero al ▯, el número de C2 < al número de C1 (q3 - Resultado en C3 = GE)
 Si ambas cintas llegan al ▯ al mismo tiempo, es decir, tiene la misma cantidad de caracteres, vuelve al inicio de ambas cintas, y moviéndo la cabeza a derecha chequea valores de C1 Y C2 en cada posición. Mientras la posición de C1 Y C2 es igual (C1=0 y C2=0 O C1=1 y C2=1), sigue iterando hacia derecha. Si encuentra que C1=0 y en C2=1, quiere decir que el número de C1 < al número de C2 (q6 - Resultado en C3 = S). Si encuentra, en cambio, que C1=1 y en C2=0, quiere decir que el número de C2 > al número de C2 (q8 - Resultado en C3 = GE). Si ambas cintas llegan a ▯ al mismo tiempo, quiere decir que ambos números son iguales y el resultado tiene que ser GE (q8).
@@ -278,6 +277,15 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC14.jff)
 <p>Contenido final de la cinta</p>
 <img src="./archivos/14eResultado.png" alt="Salida 14e" width="350">
 
+<br>
+<br>
+
+En esta segunda versión, más simplificada, se presupone que ambos números binarios poseen la misma cantidad de dígitos.
+
+<br>
+<img src="./archivos/14_2.png" alt="MTC14_2" width="600">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC14_2.jff)
 <br>
 <br>
 
