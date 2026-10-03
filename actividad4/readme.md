@@ -158,6 +158,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
 <img src="./archivos/11bResultado.png" alt="Salida 4b" width="350">
 
 <br>
+<br>
 
 <p>12 - Para eliminar el blanco que separa los dos argumentos x e y, moviendo los símbolos de y un lugar hacia la izquierda. Σ = {a, b}</p>
 
@@ -194,7 +195,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff)
 <img src="./archivos/12bResultado.png" alt="Salida 12b" width="350">
 
 <br>
-
+<br>
 
 <p>13 - MT de 3 cintas que reste el número binario de la segunda cinta del número binario de la primera y deje el resultado en la tercer cinta. Hacer otra, suponiendo que la MT es de 2 cintas y que el resultado se deja sobre la segunda. Hacerlo también para que el resultado quede en la primera</p>
 
@@ -254,7 +255,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC15.jff)
 <img src="./archivos/15cResultado.png" alt="Salida 15c" width="350">
 
 <br>
-
+<br>
 
 <p>16 - Dados dos números binarios separados por el símbolo *, defina y construya una MT que calcule la suma de ambos números</p>
 
@@ -292,7 +293,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC16.jff)
 <img src="./archivos/16bResultado.png" alt="Salida 16b" width="350">
 
 <br>
-
+<br>
 
 <p>17 - Dadas dos cadenas de palotes, separadas por el símbolo * defina y construya una MT que decida si la primera cadena es submúltiplo de la segunda, y cuántas veces. Pruebe la solución hallada con las siguientes cadenas:</p>
 <p>|||*|||||| (es submúltiplo, dos veces)</p>
@@ -344,3 +345,52 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC17.jff)
 
 <p>Contenido final de la cinta</p>
 <img src="./archivos/17cResultado.png" alt="Salida 17c" width="350">
+
+<br>
+<br>
+<p>18 - f(x, y)
+
+0 si x <= y
+
+x-y si x > y
+
+x e y codificados en unario
+
+x e y se encuentran en C1 separados por un símbolo cero
+
+resultado de f(x, y) se dejará en C4
+
+C2 se colocará c y en C3 y
+
+Ejemplo x = 5 y = 3
+
+C1: ...□111110111□...
+
+C2: ...□11111□□□□□...
+
+C3: ...□111□□□□□□□...
+
+C4: ...□11□□□□□□□□...</p>
+
+<br>
+<br>
+<img src="./archivos/18.png" alt="MT18" width="950">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC18.jff)
+
+<br>
+
+<b>*Ejemplos*</b>
+
+<div>a) 111110111 - Según apunte x=5,y=3 </div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/18aInicio.png" alt="Entrada 18a" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/18aResultado.png" alt="Salida 18a" width="350">
+
+<br>
+No coincide con el ejemplo.
