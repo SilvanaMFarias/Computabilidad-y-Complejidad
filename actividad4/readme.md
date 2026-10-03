@@ -266,7 +266,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC14.jff)
 <p>Contenido final de la cinta</p>
 <img src="./archivos/14dResultado.png" alt="Salida 14d" width="350">
 
-br>
+<br>
 
 <div>e) C1 = 10 / C2 = 10 - Resultado C3 = GE </div>
 <br> 
