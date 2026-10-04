@@ -43,9 +43,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ2.jff)
 <br>
 
 <b>Ejemplo</b>
-
-<br>
-
 <div>11 - Resultado esperado: 100</div>
 <br> 
 <p>Contenido inicial de la cinta</p>
@@ -97,12 +94,9 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ3.jff)
 <img src="./archivos/MTCEJ4.png" alt="MTCEJ4" width="350">
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ4.jff)
-
 <br>
 
 <b>Ejemplo</b>
-
-<br>
 <br>
 <div>110111 - Resultado esperado: 11111</div>
 <br> 
