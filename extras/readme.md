@@ -66,8 +66,8 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ2.jff)
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ3.jff)
 
 <br>
-<b>Ejemplos</b>
 
+<b>Ejemplos</b>
 <br>
 <div>a) 2 % 2 - Input 11 - Resultado esperado: 0 (blanco)</div>
 <br> 
