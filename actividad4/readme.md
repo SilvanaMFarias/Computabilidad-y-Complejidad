@@ -153,7 +153,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
 
 Se agregan 2 separadores: # para el resultado de la multiplicación entre x e y, y $ donde finalmente quedará el resultado de la operación expresado en unario.
 
-<img src="./archivos/6.png" alt="MT6" width="650">
+<img src="./archivos/6.png" alt="MT6" width="900">
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC6.jff)
 
