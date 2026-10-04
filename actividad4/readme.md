@@ -114,6 +114,39 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4_2.jff)
 
 <p>5 - Sumatoria de (n + i) , con 1 ≤ i ≤ n, con n codificado en unario</p>
 
+<img src="./archivos/5.png" alt="MT5" width="900">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
+
+<br>
+
+<b>*Ejemplos*</b>
+
+<div>a) Entrada 2 en unario: 11 - Resultado esperado: (2+1)+(2+2) = 3 + 4 = 7 (1111111)</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/5aInicio.png" alt="Entrada 5a" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/5aResultado.png" alt="Salida 5a" width="350">
+
+<br>
+
+<div>b) Entrada 3 en unario: 111 - Resultado esperado: (3+1)+(3+2)+(3+3) = 4 + 5 + 6 = 15 (111111111111111)</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/5bInicio.png" alt="Entrada 5b" width="350">
+
+<br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/5bResultado.png" alt="Salida 5b" width="350">
+
+<br>
+<br>
+
 <p>6 - [(x*y) / 2], para x, y > 0 codificados en unario</p>
 
 <p>7 - x mod y, para x, y > 0, codificados en unario</p>
@@ -278,8 +311,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC14.jff)
 <img src="./archivos/14eResultado.png" alt="Salida 14e" width="350">
 
 <br>
-<br>
-
 En esta segunda versión, más simplificada, se presupone que ambos números binarios poseen la misma cantidad de dígitos.
 
 <br>
