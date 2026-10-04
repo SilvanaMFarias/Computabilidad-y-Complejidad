@@ -20,8 +20,10 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4.jff)
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ1.jff)
 
 <br>
+
 <b>Ejemplo</b>
 
+<br>
 <br>
 <div>1011001 - Resultado esperado: 0100110</div>
 <br> 
@@ -29,7 +31,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ1.jff)
 
 <img src="./archivos/MTCEJ1Inicio.png" alt="Entrada MTCEJ1" width="350">
 
-<br>
 <p>Contenido final de la cinta</p>
 <img src="./archivos/MTCEJ1Resultado.png" alt="Salida MTCEJ1" width="350">
 
@@ -43,16 +44,17 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ1.jff)
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ2.jff)
 
 <br>
+
 <b>Ejemplo</b>
 
 <br>
+
 <div>11 - Resultado esperado: 100</div>
 <br> 
 <p>Contenido inicial de la cinta</p>
 
 <img src="./archivos/MTCEJ2Inicio.png" alt="Entrada MTCEJ2" width="350">
 
-<br>
 <p>Contenido final de la cinta</p>
 <img src="./archivos/MTCEJ2Resultado.png" alt="Salida MTCEJ2" width="350">
 
@@ -68,6 +70,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ3.jff)
 <br>
 
 <b>Ejemplos</b>
+
 <br>
 <div>a) 2 % 2 - Input 11 - Resultado esperado: 0 (blanco)</div>
 <br> 
@@ -75,7 +78,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ3.jff)
 
 <img src="./archivos/MTCEJ3aInicio.png" alt="Entrada MTCEJ3a" width="350">
 
-<br>
 <p>Contenido final de la cinta</p>
 <img src="./archivos/MTCEJ3aResultado.png" alt="Salida MTCEJ3a" width="350">
 
@@ -88,7 +90,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ3.jff)
 
 <img src="./archivos/MTCEJ3bInicio.png" alt="Entrada MTCEJ3b" width="350">
 
-<br>
 <p>Contenido final de la cinta</p>
 <img src="./archivos/MTCEJ3bResultado.png" alt="Salida MTCEJ3b" width="350">
 
@@ -101,8 +102,10 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ3.jff)
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ4.jff)
 
 <br>
+
 <b>Ejemplo</b>
 
+<br>
 <br>
 <div>110111 - Resultado esperado: 11111</div>
 <br> 
@@ -110,7 +113,6 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ4.jff)
 
 <img src="./archivos/MTCEJ4Inicio.png" alt="Entrada MTCEJ4" width="350">
 
-<br>
 <p>Contenido final de la cinta</p>
 <img src="./archivos/MTCEJ4Resultado.png" alt="Salida MTCEJ4" width="350">
 
