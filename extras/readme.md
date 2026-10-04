@@ -24,7 +24,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ1.jff)
 <b>Ejemplo</b>
 
 <br>
-<br>
+
 <div>1011001 - Resultado esperado: 0100110</div>
 <br> 
 <p>Contenido inicial de la cinta</p>
