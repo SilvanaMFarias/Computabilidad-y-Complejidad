@@ -352,6 +352,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC14.jff)
 En esta segunda versión, más simplificada, se presupone que ambos números binarios poseen la misma cantidad de dígitos.
 
 <br>
+
 <img src="./archivos/14_2.png" alt="MTC14_2" width="600">
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC14_2.jff)
