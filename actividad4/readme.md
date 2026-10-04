@@ -114,6 +114,8 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC4_2.jff)
 
 <p>5 - Sumatoria de (n + i) , con 1 ≤ i ≤ n, con n codificado en unario</p>
 
+Se agrega un separador # al final, donde quedará el resultado expresado en unario.
+
 <img src="./archivos/5.png" alt="MT5" width="900">
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
@@ -148,6 +150,42 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC11.jff)
 <br>
 
 <p>6 - [(x*y) / 2], para x, y > 0 codificados en unario</p>
+
+Se agregan 2 separadores: # para el resultado de la multiplicación entre x e y, y $ donde finalmente quedará el resultado de la operación expresado en unario.
+
+<img src="./archivos/6.png" alt="MT6" width="650">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC6.jff)
+
+<br>
+
+<b>*Ejemplos*</b>
+
+<div>a) 111*1 - (3x1)/2 = 1,5 - Resultado esperado: 1 (1)</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/6aInicio.png" alt="Entrada 6a" width="350">
+
+
+<p>Contenido final de la cinta</p>
+<img src="./archivos/6aResultado.png" alt="Salida 6a" width="350">
+
+<br>
+
+<div>b) 1111*111 -  (4x3)/2 = 6 - Resultado esperado: 6 (111111)</div>
+<br> 
+<p>Contenido inicial de la cinta</p>
+
+<img src="./archivos/6bInicio.png" alt="Entrada 12b" width="350">
+
+<br>
+<p>Contenido final de la cinta</p>
+<img src="./archivos/6bResultado.png" alt="Salida 12b" width="350">
+
+<br>
+<br>
+
 
 <p>7 - x mod y, para x, y > 0, codificados en unario</p>
 
