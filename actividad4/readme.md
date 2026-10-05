@@ -189,12 +189,45 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC6.jff)
 
 <p>7 - x mod y, para x, y > 0, codificados en unario</p>
 
+Se agregan un separador # quedará el resultado de la operación expresado en unario.
+
+<img src="./archivos/7.png" alt="MT6" width="950">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC7.jff)
+
+<br>
+
+<b>*Ejemplos*</b>
+
+<div>a) 11*11111 - (2 mod 5) = 2 - Resultado esperado: 11</div>
+<br> 
+<p>Contenido final de la cinta</p>
+<img src="./archivos/7a.png" alt="Salida 7a" width="300">
+
+<br>
+
+<div>b) 11111*111 -  (5 mod 3) = 2 - Resultado esperado: 11</div>
+<br> 
+<p>Contenido final de la cinta</p>
+<img src="./archivos/7b.png" alt="Salida 7b" width="300">
+
+<br>
+
+<div>c) 1111*11 -  (4 mod 2) = 0 - Resultado esperado: ▯</div>
+<br> 
+<p>Contenido final de la cinta</p>
+<img src="./archivos/7c.png" alt="Salida 7c" width="300">
+
+<br>
+<br>
+
 <p>8 - La parte entera superior del promedio de n números mayores que cero codificados en unario. Usar como separador de números unarios en la cinta de entrada al símbolo 0. Ejemplo: * Cinta de entrada: 111110111010 (números 5, 3 y 1) * Cinta resultado: 111 (cálculo [(5 + 3 + 1) / 3] = 3)</p>
+<br>
 
 <p>9 - Calcular a^nba^m -> a^(n+m)b</p>
-
+<br>
 <p>10 - Decidir si m < n, a^nb^m / n, m > 0, escribiendo en la cinta T (true) o F (false)</p>
-
+<br>
 <p>11 - Que recibe un número binario (cadena no vacía de 0’s y 1’s) y devuelve el siguiente número binario (es decir, le suma 1)</p>
 
 
