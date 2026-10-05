@@ -302,6 +302,7 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTC12.jff)
 <br>
 
 <p>13 - MT de 3 cintas que reste el número binario de la segunda cinta del número binario de la primera y deje el resultado en la tercer cinta. Hacer otra, suponiendo que la MT es de 2 cintas y que el resultado se deja sobre la segunda. Hacerlo también para que el resultado quede en la primera</p>
+<br>
 
 <p>14 - MT de 3 cintas que determine si el número binario que está en la primera cinta es menor que el de la segunda. Si es menor, escribir el símbolo S sobre la tercer cinta y si no lo es, escribir los símbolos GE sobre la tercer cinta</p>
 
