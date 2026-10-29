@@ -109,4 +109,49 @@ Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTCEJ4.jff)
 <br>
 <br>
 
+### Ejercicios MT
+
+1 - Palabras con cantidad par de 0’s
+
+<img src="./archivos/MT1.png" alt="Salida MT1" width="600">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MT1.jff)
+
+<br>
+
+2 - Palabras que comienzan y terminan con el mismo símbolo
+
+<img src="./archivos/MT2.png" alt="Salida MT1" width="600">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MT2.jff)
+
+<br>
+
+4 - Palabras de parejas de paréntesis
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MT4.jff)
+
+<br>
+
+5 - Palabras que contengan 1’s y/o 0’s pero no contengan 3 ceros seguidos
+
+<img src="./archivos/MT5.png" alt="Salida MT1" width="600">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MT5.jff)
+
+<br>
+
+6 - Palabras con un número par de x. Ejemplo xx, xxxx, ...
+
+<img src="./archivos/MT6.png" alt="Salida MT1" width="600">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MT6.jff)
+
+<br>
+
+7 - Palabras de 1’s cuya longitud es una potencia de 2
+
+<img src="./archivos/MT7.png" alt="Salida MT1" width="600">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MT7.jff)
 
