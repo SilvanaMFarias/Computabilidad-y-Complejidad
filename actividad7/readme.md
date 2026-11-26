@@ -4,7 +4,7 @@
 
 #### Determinar complejidad espacial y temporal
 
-<p>Ejercicio 1) 
+Ejercicio 1) 
 
 $L = \{wcw^{-1} / w \in \Sigma^*\}$
 
@@ -12,7 +12,8 @@ Para la resolución de este ejercicio, vamos a tomar como ejemplo:
 
 *  Alfabeto de entrada: $\Sigma = \{a, b, c\}$, donde $w \in \{a, b\}^*$
 * Alfabeto de cinta: $\Gamma = \{a, b, c, X, Y, \square\}$ 
-</p>
+
+<br>
 
 *JFLAP*
 
@@ -20,9 +21,13 @@ Para la resolución de este ejercicio, vamos a tomar como ejemplo:
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTEj1.jff)
 
+<br>
+
 *Turing Machine simulator*
+
 🔗 (http://turingmachinesimulator.com/shared/pppjgtvgmf)
 
+<br>
 
 *Cálculo de complejidad espacial*
 
@@ -32,7 +37,9 @@ Como vamos reemplazando los símbolos por marcas auxiliares sobre la misma cinta
 
 Por lo tanto, $`S(n) = 2n + 3 \implies S(n) \in O(n)`$, es decir, la complejidad espacial es **lineal**.
 
+<br>
 
+*Cálculo de complejidad temporal*
 <br>
 <br>
 
