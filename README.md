@@ -11,4 +11,5 @@ A continuación, podés acceder a cada actividad:
 - [Actividad 4: Tp Máquina de Turing Calculable](./actividad4/readme.md)
 - [Actividad 5: Tp Máquina de Turing Universal](./actividad5/readme.md)
 - [Actividad 6: El problema de correspondencia de POST](./actividad6/readme.md)
+- [Actividad 7: Complejidad Computacional](./actividad7/readme.md)
 - [Extras](./extras/readme.md)
