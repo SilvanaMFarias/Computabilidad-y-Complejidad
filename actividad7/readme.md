@@ -6,12 +6,12 @@
 
 Ejercicio 1) 
 
-$L = \{wcw^{-1} / w \in \Sigma^*\}$
+$L = \\{wcw^{-1} / w \in \Sigma^*\\}$
 
 Para la resolución de este ejercicio, vamos a tomar como ejemplo:
 
-*  Alfabeto de entrada: $\Sigma = \{a, b, c\}$, donde $w \in \{a, b\}^*$
-* Alfabeto de cinta: $\Gamma = \{a, b, c, X, Y, \square\}$ 
+- Alfabeto de entrada: $\Sigma = \\{a, b, c\\}$, donde $w \in \\{a, b\\}^*$
+- Alfabeto de cinta: $\Gamma = \\{a, b, c, X, Y, \square\\}$
 
 <br>
 
