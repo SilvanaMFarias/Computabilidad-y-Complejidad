@@ -47,7 +47,7 @@ La complejidad temporal $`T(n)`$ mide la cantidad de movimientos que realiza el 
 
 Si llamamos $`n`$ a la longitud de la subcadena $`w`$, la entrada completa tiene longitud $`2n + 1`$. Para cada uno de los $`n`$ símbolos de $`w`$, la máquina realiza un recorrido completo hacia la derecha y otro hacia la izquierda, como puede observarse en la siguiente imagen:
 
-<img src="./archivos/EjMovMTEj1.png" alt="Movimientos" width="800">
+<img src="./archivos/EjMovMTEj1.png" alt="Movimientos" width="600">
 
 
 | Operación | Movimientos |
