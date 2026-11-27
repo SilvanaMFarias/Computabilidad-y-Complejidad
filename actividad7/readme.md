@@ -17,7 +17,7 @@ Para la resolución de este ejercicio, vamos a tomar como ejemplo:
 
 *JFLAP*
 
-![Ej1](./archivos/MTEj1.png)
+<img src="./archivos/MTEj1.png" alt="Movimientos" width="700">
 
 Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTEj1.jff)
 
@@ -45,9 +45,9 @@ Por lo tanto, $`S(n) = 2n + 3 \implies S(n) \in O(n)`$, es decir, la complejidad
 
 La complejidad temporal $`T(n)`$ mide la cantidad de movimientos que realiza el cabezal en el peor caso, el cual ocurre cuando la palabra pertenece al lenguaje y la máquina debe procesarla por completo (sin considerar el movimiento Stay).
 
-Si llamamos $`n`$ a la longitud de la subcadena $`w`$, la entrada completa tiene longitud $`2n + 1`$. Para cada uno de los $`n`$ símbolos de $`w`$, la máquina realiza un recorrido completo hacia la derecha y otro hacia la izquierda, como puede observarse en la siguiente imagen:
+Si llamamos $`n`$ a la longitud de la subcadena $`w`$, la entrada completa tiene longitud $`2n + 1`$. Para cada uno de los $`n`$ símbolos de $`w`$, la máquina realiza un recorrido completo hacia la derecha y otro hacia la izquierda, como puede observarse en la siguiente imagen de ejemplo:
 
-<img src="./archivos/EjMovMTEj1.png" alt="Movimientos" width="600">
+<img src="./archivos/EjMovMTEj1.png" alt="Movimientos" width="500">
 
 
 | Operación | Movimientos |
@@ -82,3 +82,23 @@ Por lo tanto, $`T(n) \in O(n^2)`$, es decir, la complejidad temporal es cuadrát
 <br>
 
 <p>Ejercicio 2) f((ab)<sup>n</sup>) = (ab)<sup>n+1</sup></p>
+
+*JFLAP*
+
+<img src="./archivos/MTEj2.png" alt="Movimientos" width="350">
+
+Haz clic aquí para [Descargar el archivo JFLAP](./archivos/MTEj2.jff)
+
+<br>
+
+*Turing Machine simulator*
+
+🔗 (http://turingmachinesimulator.com/shared/rdvadcemyn)
+
+<br>
+
+*Cálculo de complejidad espacial*
+
+<br>
+
+*Cálculo de complejidad temporal*
